@@ -17,8 +17,8 @@ class CreateQuestionTranslationsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('question_id')->unsigned();
             $table->string('locale')->index();
-            $table->string('question');
-            $table->string('answer');
+            $table->text('question');
+            $table->text('answer');
             $table->unique(['question_id','locale']);
 
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');

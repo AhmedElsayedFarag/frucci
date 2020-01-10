@@ -18,8 +18,8 @@ class CreateProductTranslationsTable extends Migration
             $table->bigInteger('product_id')->unsigned();
             $table->string('name');
             $table->string('pattern');
-            $table->string('short_description');
-            $table->string('description');
+            $table->text('short_description');
+            $table->longText('description');
             $table->string('material');
             $table->string('size');
             $table->string('locale')->index();
