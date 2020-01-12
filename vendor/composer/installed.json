@@ -943,6 +943,67 @@
         "description": "Highlight PHP code in terminal"
     },
     {
+        "name": "josiasmontag/laravel-localization",
+        "version": "0.6.1",
+        "version_normalized": "0.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/josiasmontag/laravel-localization.git",
+            "reference": "117c24de23a1ed2959629023f10283d6a572068b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/josiasmontag/laravel-localization/zipball/117c24de23a1ed2959629023f10283d6a572068b",
+            "reference": "117c24de23a1ed2959629023f10283d6a572068b",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "^6.0",
+            "php": ">=7.2.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^1.2",
+            "orchestra/testbench": "^4.0",
+            "phpunit/phpunit": "^8.0"
+        },
+        "time": "2019-10-12T00:20:06+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Lunaweb\\Localization\\LocalizationServiceProvider"
+                ],
+                "aliases": {
+                    "Localization": "Lunaweb\\Localization\\Facades\\Localization"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Lunaweb\\Localization\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Josias Montag",
+                "email": "josias@montag.info"
+            }
+        ],
+        "description": "Localization for Laravel framework",
+        "homepage": "https://github.com/josiasmontag/laravel-localization",
+        "keywords": [
+            "language",
+            "laravel",
+            "localization",
+            "php"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v6.9.0",
         "version_normalized": "6.9.0.0",

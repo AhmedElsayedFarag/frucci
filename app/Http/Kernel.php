@@ -35,6 +35,9 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Lunaweb\Localization\Middleware\LocalizationHandler::class,
+            \App\Http\Middleware\Localization::class, // Our localization middleware
+
         ],
 
         'api' => [

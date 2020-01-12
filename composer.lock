@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20942641d11e3c2b60021289db366294",
+    "content-hash": "d0759d8f48c0fc858ae0a954fe91bbb9",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -530,6 +530,65 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "josiasmontag/laravel-localization",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/josiasmontag/laravel-localization.git",
+                "reference": "117c24de23a1ed2959629023f10283d6a572068b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/josiasmontag/laravel-localization/zipball/117c24de23a1ed2959629023f10283d6a572068b",
+                "reference": "117c24de23a1ed2959629023f10283d6a572068b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lunaweb\\Localization\\LocalizationServiceProvider"
+                    ],
+                    "aliases": {
+                        "Localization": "Lunaweb\\Localization\\Facades\\Localization"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lunaweb\\Localization\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josias Montag",
+                    "email": "josias@montag.info"
+                }
+            ],
+            "description": "Localization for Laravel framework",
+            "homepage": "https://github.com/josiasmontag/laravel-localization",
+            "keywords": [
+                "language",
+                "laravel",
+                "localization",
+                "php"
+            ],
+            "time": "2019-10-12T00:20:06+00:00"
         },
         {
             "name": "laravel/framework",

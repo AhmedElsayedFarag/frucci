@@ -176,7 +176,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'F:\\arrr\\projects\\latest\\storage\\framework/cache/data',
+        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -315,12 +315,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\arrr\\projects\\latest\\storage\\app',
+        'root' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\arrr\\projects\\latest\\storage\\app/public',
+        'root' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -349,6 +349,25 @@
       'time' => 2,
     ),
   ),
+  'localization' => 
+  array (
+    'locales' => 
+    array (
+      'en' => 
+      array (
+        'name' => 'English',
+      ),
+      'ar' => 
+      array (
+        'name' => 'Arabic',
+      ),
+    ),
+    'hide_default_locale_in_url' => true,
+    'locale_query_parameter' => 'hl',
+    'redirect_to_localized_route' => true,
+    'detect_via_http_header' => true,
+    'detect_via_session' => true,
+  ),
   'logging' => 
   array (
     'default' => 'stack',
@@ -366,13 +385,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'F:\\arrr\\projects\\latest\\storage\\logs/laravel.log',
+        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'F:\\arrr\\projects\\latest\\storage\\logs/laravel.log',
+        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -422,7 +441,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'F:\\arrr\\projects\\latest\\storage\\logs/laravel.log',
+        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -445,7 +464,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'F:\\arrr\\projects\\latest\\resources\\views/vendor/mail',
+        0 => 'F:\\arrr\\projects\\New folder\\frucci\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -570,7 +589,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'F:\\arrr\\projects\\latest\\storage\\framework/sessions',
+    'files' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -590,9 +609,37 @@
   array (
     'paths' => 
     array (
-      0 => 'F:\\arrr\\projects\\latest\\resources\\views',
+      0 => 'F:\\arrr\\projects\\New folder\\frucci\\resources\\views',
     ),
-    'compiled' => 'F:\\arrr\\projects\\latest\\storage\\framework\\views',
+    'compiled' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\framework\\views',
+  ),
+  'translatable' => 
+  array (
+    'locales' => 
+    array (
+      0 => 'en',
+      1 => 'fr',
+      'es' => 
+      array (
+        0 => 'MX',
+        1 => 'CO',
+      ),
+    ),
+    'locale_separator' => '-',
+    'locale' => NULL,
+    'use_fallback' => false,
+    'use_property_fallback' => true,
+    'fallback_locale' => 'en',
+    'translation_model_namespace' => NULL,
+    'translation_suffix' => 'Translation',
+    'locale_key' => 'locale',
+    'to_array_always_loads_translations' => true,
+    'rule_factory' => 
+    array (
+      'format' => 1,
+      'prefix' => '%',
+      'suffix' => '%',
+    ),
   ),
   'flare' => 
   array (

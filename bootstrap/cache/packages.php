@@ -24,6 +24,17 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
+  'josiasmontag/laravel-localization' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lunaweb\\Localization\\LocalizationServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Localization' => 'Lunaweb\\Localization\\Facades\\Localization',
+    ),
+  ),
   'laravel/tinker' => 
   array (
     'providers' => 
