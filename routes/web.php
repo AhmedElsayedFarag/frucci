@@ -27,3 +27,5 @@ Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
     });
 });
 
+Route::get('index', 'IndexController@index');
+
