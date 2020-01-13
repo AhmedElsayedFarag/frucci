@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loading" lang="en" data-textdirection="{{(\App()->getLocale()=='ar')?'data-textdirection="rtl"':'data-textdirection="ltr"'}}">
 <!-- BEGIN: Head-->
 
 <head>
@@ -15,7 +15,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/vendors.min.css')}}">
+    @if(\App()->getLocale()=='ar')
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/vendors-rtl.min.css')}}">
+
+    @else
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/vendors.min.css')}}">
+    @endif
     <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/charts/apexcharts.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/extensions/tether-theme-arrows.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/vendors/css/extensions/tether.min.css')}}">
@@ -23,23 +28,28 @@
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/themes/semi-dark-layout.css')}}">
+    @php $locale=(\App()->getLocale()=='ar')?'-rtl':''; @endphp
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/themes/semi-dark-layout.css')}}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/pages/dashboard-analytics.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/pages/card-analytics.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css/plugins/tour/tour.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/pages/dashboard-analytics.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/pages/card-analytics.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/app-assets/css'.$locale.'/plugins/tour/tour.css')}}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css'.$locale.'/style.css')}}">
+    @if($locale=='ar')
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style-rtl.css')}}">
+    @endif
+
     <!-- END: Custom CSS-->
 
 </head>

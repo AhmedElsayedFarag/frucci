@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="244bb19f-d217-445a-a7ee-ce60ba0f6526" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/c7c069470ba60a3fd2e0240e5d40e7f3812e88a3.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/c7c069470ba60a3fd2e0240e5d40e7f3812e88a3.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,7 @@
       <workItem from="1578773629836" duration="363000" />
       <workItem from="1578774156753" duration="3683000" />
       <workItem from="1578810749049" duration="2946000" />
-      <workItem from="1578947318838" duration="2579000" />
+      <workItem from="1578947318838" duration="5068000" />
     </task>
     <servers />
   </component>
