@@ -35,11 +35,12 @@
                     <li class="dropdown dropdown-language nav-item">
                         <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                            <a class="dropdown-item" href="{{route('change_locale','en')}}" data-language="en"><i class="flag-icon flag-icon-pt"></i> English</a>
-                            <a class="dropdown-item" href="{{route('change_locale','ar')}}" data-language="ar"><i class="flag-icon flag-icon-pt"></i> العربية</a>
+                            <a class="dropdown-item" href="<?php echo e(route('change_locale','en')); ?>" data-language="en"><i class="flag-icon flag-icon-pt"></i> English</a>
+                            <a class="dropdown-item" href="<?php echo e(route('change_locale','ar')); ?>" data-language="ar"><i class="flag-icon flag-icon-pt"></i> العربية</a>
                         </div>
                     </li>
-                    {{\App::getLocale()}}
+                    <?php echo e(\App::getLocale()); ?>
+
                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon feather icon-search"></i></a>
                         <div class="search-input">
@@ -101,7 +102,7 @@
                         </ul>
                     </li>
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span><span class="user-status">Available</span></div><span><img class="round" src="{{asset('admin/app-assets/images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40"></span>
+                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span><span class="user-status">Available</span></div><span><img class="round" src="<?php echo e(asset('admin/app-assets/images/portrait/small/avatar-s-11.jpg')); ?>" alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a>
                             <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html"><i class="feather icon-power"></i> Logout</a>
@@ -118,7 +119,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
             <div class="d-flex">
-                <div class="mr-50"><img src="{{asset(('admin/app-assets/images/icons/xls.png'))}}" alt="png" height="32"></div>
+                <div class="mr-50"><img src="<?php echo e(asset(('admin/app-assets/images/icons/xls.png'))); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
                 </div>
@@ -126,7 +127,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
             <div class="d-flex">
-                <div class="mr-50"><img src="{{asset(('admin/app-assets/images/icons/jpg.png'))}}" alt="png" height="32"></div>
+                <div class="mr-50"><img src="<?php echo e(asset(('admin/app-assets/images/icons/jpg.png'))); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
                 </div>
@@ -134,7 +135,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
             <div class="d-flex">
-                <div class="mr-50"><img src="{{asset(('admin/app-assets/images/icons/pdf.png'))}}" alt="png" height="32"></div>
+                <div class="mr-50"><img src="<?php echo e(asset(('admin/app-assets/images/icons/pdf.png'))); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
                 </div>
@@ -142,7 +143,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100" href="#">
             <div class="d-flex">
-                <div class="mr-50"><img src="{{asset('admin/app-assets/images/icons/doc.png')}}" alt="png" height="32"></div>
+                <div class="mr-50"><img src="<?php echo e(asset('admin/app-assets/images/icons/doc.png')); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
                 </div>
@@ -153,7 +154,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-50"><img src="{{asset(('admin/app-assets/images/portrait/small/avatar-s-8.jpg'))}}" alt="png" height="32"></div>
+                <div class="avatar mr-50"><img src="<?php echo e(asset(('admin/app-assets/images/portrait/small/avatar-s-8.jpg'))); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
                 </div>
@@ -161,7 +162,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-50"><img src="{{asset('admin/app-assets/images/portrait/small/avatar-s-1.jpg')}}" alt="png" height="32"></div>
+                <div class="avatar mr-50"><img src="<?php echo e(asset('admin/app-assets/images/portrait/small/avatar-s-1.jpg')); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
                 </div>
@@ -169,7 +170,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-50"><img src="{{asset(('admin/app-assets/images/portrait/small/avatar-s-14.jpg'))}}" alt="png" height="32"></div>
+                <div class="avatar mr-50"><img src="<?php echo e(asset(('admin/app-assets/images/portrait/small/avatar-s-14.jpg'))); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
                 </div>
@@ -177,7 +178,7 @@
         </a></li>
     <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
             <div class="d-flex align-items-center">
-                <div class="avatar mr-50"><img src="{{asset('admin/app-assets/images/portrait/small/avatar-s-6.jpg')}}" alt="png" height="32"></div>
+                <div class="avatar mr-50"><img src="<?php echo e(asset('admin/app-assets/images/portrait/small/avatar-s-6.jpg')); ?>" alt="png" height="32"></div>
                 <div class="search-data">
                     <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
                 </div>
@@ -190,3 +191,4 @@
         </a></li>
 </ul>
 <!-- END: Header-->
+<?php /**PATH F:\arrr\projects\New folder\frucci\resources\views/admin/layouts/header.blade.php ENDPATH**/ ?>

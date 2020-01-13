@@ -28,4 +28,5 @@ Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
 });
 
 Route::get('index', 'IndexController@index');
+Route::get('change_locale/{locale}', 'IndexController@change_locale')->name('change_locale');
 
