@@ -146,6 +146,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'question'              => 'question',
+        'answer'                => 'answer',
+    ],
 
 ];

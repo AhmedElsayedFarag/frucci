@@ -9,4 +9,6 @@ class Question extends Model
 {
     Use Translatable;
     public $translatedAttributes = ['question', 'answer'];
+    protected $fillable = array('question', 'answer');
+
 }
