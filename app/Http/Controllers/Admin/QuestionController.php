@@ -40,7 +40,14 @@ class QuestionController extends Controller
      */
     public function store(QuestionRequest $request)
     {
-        Question::create($request->all());
+        $question = new Question();
+        $question->save();
+        $available_locales = ['ar','en'];
+        foreach ($available_locales as $locale){
+            $question->translateOrNew($locale)->question = $request['question_'.$locale];
+            $question->translateOrNew($locale)->answer = $request['answer_'.$locale];
+        }//end for each
+        $question->save();
         return redirect(route('questions.index'));
     }
 

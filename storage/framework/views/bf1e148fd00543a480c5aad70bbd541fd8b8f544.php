@@ -8,12 +8,7 @@
 
 <?php $__env->startSection('content'); ?>
     <!-- BEGIN: Content-->
-    <div class="app-content content">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
+
             <div class="content-body">
                 <!-- Dashboard Analytics Start -->
                 <section id="dashboard-analytics">
@@ -451,8 +446,7 @@
                 <!-- Dashboard Analytics end -->
 
             </div>
-        </div>
-    </div>
+
     <!-- END: Content-->
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\arrr\projects\New folder\frucci\resources\views/admin/index.blade.php ENDPATH**/ ?>

@@ -24,8 +24,10 @@ class QuestionRequest extends FormRequest
     public function rules()
     {
         return [
-            'question' => 'required',
-            'answer' => 'required',
+            'question_ar' => 'required',
+            'answer_ar' => 'required',
+            'question_en' => 'required',
+            'answer_en' => 'required',
         ];
     }
 }

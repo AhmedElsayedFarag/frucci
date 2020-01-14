@@ -9,6 +9,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title><?php echo $__env->yieldContent('pageTitle'); ?> | <?php echo $__env->yieldContent('pageSubTitle'); ?></title>
     <link rel="apple-touch-icon" href="<?php echo e(asset('admin/app-assets/app-assets/images/ico/apple-icon-120.png')); ?>">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo e(asset('admin/app-assets/images/ico/favicon.ico')); ?>">
@@ -63,7 +64,17 @@
 
 <?php echo $__env->make('admin.layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+
 <?php echo $__env->yieldContent('content'); ?>
+
+    </div>
+</div>
 
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
@@ -78,6 +89,8 @@
 <script src="<?php echo e(asset('admin/app-assets/vendors/js/charts/apexcharts.min.js')); ?>"></script>
 <script src="<?php echo e(asset('admin/app-assets/vendors/js/extensions/tether.min.js')); ?>"></script>
 <script src="<?php echo e(asset('admin/app-assets/vendors/js/extensions/shepherd.min.js')); ?>"></script>
+<script src="<?php echo e(asset('admin/app-assets/vendors/js/extensions/sweetalert2.all.min.js')); ?>"></script>
+<script src="<?php echo e(asset('admin/app-assets/vendors/js/extensions/polyfill.min.js')); ?>"></script>
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
@@ -88,7 +101,12 @@
 
 <!-- BEGIN: Page JS-->
 <script src="<?php echo e(asset('admin/app-assets/js/scripts/pages/dashboard-analytics.js')); ?>"></script>
+<script src="<?php echo e(asset('admin/app-assets/js/scripts/extensions/sweet-alerts.js')); ?>"></script>
 <!-- END: Page JS-->
+
+<!-- BEGIN: Main JS-->
+<script src="<?php echo e(asset('admin/app-assets/js/scripts/main.js')); ?>"></script>
+<!-- END: Main JS-->
 
 <?php echo $__env->yieldContent('scripts'); ?>
 

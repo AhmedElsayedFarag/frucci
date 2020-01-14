@@ -39,8 +39,6 @@
                             <a class="dropdown-item" href="<?php echo e(route('change_locale','ar')); ?>" data-language="ar"><i class="flag-icon flag-icon-pt"></i> العربية</a>
                         </div>
                     </li>
-                    <?php echo e(\App::getLocale()); ?>
-
                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon feather icon-search"></i></a>
                         <div class="search-input">
