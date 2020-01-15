@@ -147,8 +147,10 @@ return [
     */
 
     'attributes' => [
-        'question'              => 'question',
-        'answer'                => 'answer',
+        'question_en'              => 'question in English',
+        'answer_en'                => 'answer in English',
+        'question_ar'              => 'question in Arabic',
+        'answer_ar'                => 'answer in Arabic',
     ],
 
 ];

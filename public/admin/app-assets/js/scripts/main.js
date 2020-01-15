@@ -27,7 +27,7 @@ $(document).on('click', '.remove-alert', function (e) {
                 token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 type: 'post',
-                url: d_url+id,
+                url: '/admin'+d_url+id,
                 data: {
                     _method:'delete',
                     _token: token
@@ -56,5 +56,25 @@ $(document).on('click', '.remove-alert', function (e) {
 
         }
     })
+
+
+    //form validtion
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 
 });

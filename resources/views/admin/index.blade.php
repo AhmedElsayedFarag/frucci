@@ -1,11 +1,11 @@
 @extends('admin.layouts.app')
 
 @section('pageTitle')
-    لوحة التحكم
+    {{trans('admin_content.dashboard')}}
 @endsection
 
 @section('pageSubTitle')
-    الرئيسية
+    {{trans('admin_content.main')}}
 @endsection
 
 @section('content')

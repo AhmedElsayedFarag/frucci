@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\QuestionRequest;
 use App\Question;
+use App\QuestionTranslation;
 
 
 class QuestionController extends Controller
@@ -42,7 +43,7 @@ class QuestionController extends Controller
     {
         $question = new Question();
         $question->save();
-        $available_locales = Localization::getLocales();
+        $available_locales = \Localization::getLocales();
         foreach ($available_locales as $locale => $value){
             $question->translateOrNew($locale)->question = $request['question_'.$locale];
             $question->translateOrNew($locale)->answer = $request['answer_'.$locale];
@@ -71,7 +72,11 @@ class QuestionController extends Controller
     public function edit($id)
     {
         $question = Question::findOrFail($id);
-        return view('admin.questions.edit', compact('question'));
+        $questionAr = QuestionTranslation::where('question_id', $question->id)->where('locale', 'ar')->first()->question;
+        $questionEn = QuestionTranslation::where('question_id', $question->id)->where('locale', 'en')->first()->question;
+        $answerAr = QuestionTranslation::where('question_id', $question->id)->where('locale', 'ar')->first()->answer;
+        $answerEn = QuestionTranslation::where('question_id', $question->id)->where('locale', 'en')->first()->answer;
+        return view('admin.questions.edit', compact('question', 'questionAr', 'questionEn', 'answerAr', 'answerEn'));
     }
 
     /**

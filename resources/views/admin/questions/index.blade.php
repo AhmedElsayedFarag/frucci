@@ -2,10 +2,10 @@
 
 @extends('admin.layouts.app')
 
-@section('pageTitle'){{(App()->getLocale() == 'ar') ? 'لوحة التحكم' : 'Dashboard'}}
+@section('pageTitle'){{trans('admin_content.dashboard')}}
 @endsection
 
-@section('pageSubTitle') {{(App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'}}
+@section('pageSubTitle') {{trans('admin_content.questions')}}
 @endsection
 
 @section('content')
@@ -16,12 +16,12 @@
 
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-left mb-0">{{(App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'}}</h2>
+                <h2 class="content-header-title float-left mb-0">{{trans('admin_content.questions')}}</h2>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{(App()->getLocale() == 'ar') ? 'الرئيسية' : 'Main'}}</a>
+                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{trans('admin_content.main')}}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{(App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'}}
+                        <li class="breadcrumb-item active">{{trans('admin_content.questions')}}
                         </li>
                     </ol>
                 </div>
@@ -29,16 +29,19 @@
         </div>
 
 
-
+        <div class="col-12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
         <div class="table-responsive">
-            <a href="{{route('questions.create')}}" class="btn btn-primary btn-block my-2 waves-effect waves-light">{{(App()->getLocale() == 'ar') ? 'اضافة سؤال' : 'Add question'}} </a>
+            <a href="{{route('questions.create')}}" class="btn btn-primary btn-block my-2 waves-effect waves-light">{{trans('admin_content.add_question')}} </a>
             <table class="table table-bordered mb-0">
                 <thead>
                 <tr align="center">
                     <th>#</th>
-                    <th>{{(App()->getLocale() == 'ar') ? 'السؤال' : 'Question'}}</th>
-                    <th>{{(App()->getLocale() == 'ar') ? 'الاجابة' : 'Answer'}}</th>
-                    <th>{{(App()->getLocale() == 'ar') ? 'الاجراء المتخذ' : 'Taken action'}}</th>
+                    <th>{{trans('admin_content.question')}}</th>
+                    <th>{{trans('admin_content.answer')}}</th>
+                    <th>{{trans('admin_content.taken_action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,8 +61,11 @@
                 </tbody>
             </table>
         </div>
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <!--end div-->
 

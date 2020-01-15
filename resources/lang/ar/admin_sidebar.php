@@ -1,5 +1,5 @@
 <?php
 return [
-        'questions' => 'االاسئلة',
+        'questions' => 'الأسئلة',
 
 ];
