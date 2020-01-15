@@ -40,56 +40,35 @@
                             @csrf
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.question_in_arabic')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="question_ar" required>{{$questionAr}}</textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_question')}}
+@foreach($question->getTranslationsArray() as $locale =>$value)
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>{{trans("admin_content.question")}}</span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="{{"question_$locale"}}" required>{{$value['question']}}</textarea>
+                                                    <div class="invalid-feedback">
+                                                        {{trans('admin_content.please_enter_question')}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.question_in_english')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="question_en" required>{{$questionEn}}</textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_question')}}
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>{{trans("admin_content.question")}}</span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="{{"answer_$locale"}}" required>{{$value['answer']}}</textarea>
+                                                    <div class="invalid-feedback">
+                                                        {{trans('admin_content.please_enter_question')}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.answer_in_arabic')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.answer')}}" name="answer_ar" required>{{$answerAr}}</textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_answer')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.answer_in_english')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.answer')}}" name="answer_en" required>{{$answerEn}}</textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_answer')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+@endforeach
+
                                     <div class="col-12 text-center">
                                         <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">{{trans('admin_content.edit')}}</button>
                                     </div>

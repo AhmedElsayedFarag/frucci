@@ -1,9 +1,11 @@
 <?php $__env->startSection('pageTitle'); ?>
-    لوحة التحكم
+    <?php echo e(trans('admin_content.dashboard')); ?>
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('pageSubTitle'); ?>
-    الرئيسية
+    <?php echo e(trans('admin_content.main')); ?>
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>

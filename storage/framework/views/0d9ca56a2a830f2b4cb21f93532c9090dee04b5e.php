@@ -1,8 +1,8 @@
-<?php $__env->startSection('pageTitle'); ?><?php echo e((App()->getLocale() == 'ar') ? 'لوحة التحكم' : 'Dashboard'); ?>
+<?php $__env->startSection('pageTitle'); ?><?php echo e(trans('admin_content.dashboard')); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('pageSubTitle'); ?> <?php echo e((App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'); ?>
+<?php $__env->startSection('pageSubTitle'); ?> <?php echo e(trans('admin_content.questions')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -14,12 +14,12 @@
 
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-left mb-0"><?php echo e((App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'); ?></h2>
+                <h2 class="content-header-title float-left mb-0"><?php echo e(trans('admin_content.questions')); ?></h2>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo e(route('dashboard')); ?>"><?php echo e((App()->getLocale() == 'ar') ? 'الرئيسية' : 'Main'); ?></a>
+                        <li class="breadcrumb-item"><a href="<?php echo e(route('dashboard')); ?>"><?php echo e(trans('admin_content.main')); ?></a>
                         </li>
-                        <li class="breadcrumb-item active"><?php echo e((App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'); ?>
+                        <li class="breadcrumb-item active"><?php echo e(trans('admin_content.questions')); ?>
 
                         </li>
                     </ol>
@@ -28,16 +28,19 @@
         </div>
 
 
-
+        <div class="col-12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
         <div class="table-responsive">
-            <a href="<?php echo e(route('questions.create')); ?>" class="btn btn-primary btn-block my-2 waves-effect waves-light"><?php echo e((App()->getLocale() == 'ar') ? 'اضافة سؤال' : 'Add question'); ?> </a>
+            <a href="<?php echo e(route('questions.create')); ?>" class="btn btn-primary btn-block my-2 waves-effect waves-light"><?php echo e(trans('admin_content.add_question')); ?> </a>
             <table class="table table-bordered mb-0">
                 <thead>
                 <tr align="center">
                     <th>#</th>
-                    <th><?php echo e((App()->getLocale() == 'ar') ? 'السؤال' : 'Question'); ?></th>
-                    <th><?php echo e((App()->getLocale() == 'ar') ? 'الاجابة' : 'Answer'); ?></th>
-                    <th><?php echo e((App()->getLocale() == 'ar') ? 'الاجراء المتخذ' : 'Taken action'); ?></th>
+                    <th><?php echo e(trans('admin_content.question')); ?></th>
+                    <th><?php echo e(trans('admin_content.answer')); ?></th>
+                    <th><?php echo e(trans('admin_content.taken_action')); ?></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,8 +60,11 @@
                 </tbody>
             </table>
         </div>
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <!--end div-->
 

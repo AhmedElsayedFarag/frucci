@@ -35,8 +35,8 @@
                     <li class="dropdown dropdown-language nav-item">
                         <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                            <a class="dropdown-item" href="<?php echo e(route('change_locale','en')); ?>" data-language="en"><i class="flag-icon flag-icon-pt"></i> English</a>
-                            <a class="dropdown-item" href="<?php echo e(route('change_locale','ar')); ?>" data-language="ar"><i class="flag-icon flag-icon-pt"></i> العربية</a>
+                            <a class="dropdown-item" href="<?php echo e(route('change_locale','en')); ?>" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a>
+                            <a class="dropdown-item" href="<?php echo e(route('change_locale','ar')); ?>" data-language="ar"><i class="flag-icon flag-icon-sa"></i> العربية</a>
                         </div>
                     </li>
                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>

@@ -72,11 +72,13 @@ class QuestionController extends Controller
     public function edit($id)
     {
         $question = Question::findOrFail($id);
-        $questionAr = QuestionTranslation::where('question_id', $question->id)->where('locale', 'ar')->first()->question;
-        $questionEn = QuestionTranslation::where('question_id', $question->id)->where('locale', 'en')->first()->question;
-        $answerAr = QuestionTranslation::where('question_id', $question->id)->where('locale', 'ar')->first()->answer;
-        $answerEn = QuestionTranslation::where('question_id', $question->id)->where('locale', 'en')->first()->answer;
-        return view('admin.questions.edit', compact('question', 'questionAr', 'questionEn', 'answerAr', 'answerEn'));
+//        dd($question->getTranslationsArray());
+//        $questionAr = QuestionTranslation::where('question_id', $question->id)->where('locale', 'ar')->first()->question;
+//        $questionEn = QuestionTranslation::where('question_id', $question->id)->where('locale', 'en')->first()->question;
+//        $answerAr = QuestionTranslation::where('question_id', $question->id)->where('locale', 'ar')->first()->answer;
+//        $answerEn = QuestionTranslation::where('question_id', $question->id)->where('locale', 'en')->first()->answer;
+        return view('admin.questions.edit', compact('question'));
+//        return view('admin.questions.edit', compact('question', 'questionAr', 'questionEn', 'answerAr', 'answerEn'));
     }
 
     /**
@@ -88,7 +90,14 @@ class QuestionController extends Controller
      */
     public function update(QuestionRequest $request, $id)
     {
-        Question::findOrFail($id)->update($request->all());
+        $question = Question::findOrFail($id);
+        $question->deleteTranslations();
+        $available_locales = \Localization::getLocales();
+        foreach ($available_locales as $locale => $value){
+            $question->translateOrNew($locale)->question = $request['question_'.$locale];
+            $question->translateOrNew($locale)->answer = $request['answer_'.$locale];
+        }//end for each
+        $question->save();
         return redirect(route('questions.index'));
     }
 
