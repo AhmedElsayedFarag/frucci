@@ -19,7 +19,7 @@
                 <h2 class="content-header-title float-left mb-0">{{(App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'}}</h2>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('main')}}">{{(App()->getLocale() == 'ar') ? 'الرئيسية' : 'Main'}}</a>
+                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{(App()->getLocale() == 'ar') ? 'الرئيسية' : 'Main'}}</a>
                         </li>
                         <li class="breadcrumb-item active">{{(App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'}}
                         </li>

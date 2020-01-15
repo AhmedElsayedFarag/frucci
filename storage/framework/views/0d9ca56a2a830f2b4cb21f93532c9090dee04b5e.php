@@ -17,7 +17,7 @@
                 <h2 class="content-header-title float-left mb-0"><?php echo e((App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'); ?></h2>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo e(route('main')); ?>"><?php echo e((App()->getLocale() == 'ar') ? 'الرئيسية' : 'Main'); ?></a>
+                        <li class="breadcrumb-item"><a href="<?php echo e(route('dashboard')); ?>"><?php echo e((App()->getLocale() == 'ar') ? 'الرئيسية' : 'Main'); ?></a>
                         </li>
                         <li class="breadcrumb-item active"><?php echo e((App()->getLocale() == 'ar') ? 'الأسئلة' : 'Questions'); ?>
 

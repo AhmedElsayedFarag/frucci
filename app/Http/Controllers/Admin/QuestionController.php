@@ -42,8 +42,8 @@ class QuestionController extends Controller
     {
         $question = new Question();
         $question->save();
-        $available_locales = ['ar','en'];
-        foreach ($available_locales as $locale){
+        $available_locales = Localization::getLocales();
+        foreach ($available_locales as $locale => $value){
             $question->translateOrNew($locale)->question = $request['question_'.$locale];
             $question->translateOrNew($locale)->answer = $request['answer_'.$locale];
         }//end for each

@@ -14,6 +14,8 @@ class adminSeederAndRole extends Seeder
         $user = new \App\User([
             'name' => 'admin',
             'email' => 'admin@admin.com',
+            'phone' => '123456789',
+            'image' => 'default',
             'password' => bcrypt('123456789'),
         ]);
         $user->save();

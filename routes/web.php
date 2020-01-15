@@ -22,14 +22,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return '<h1>admin</h1>';
-    });
+    Route::get('/dashboard', 'Admin\AdminController@index')->name('dashboard');
+
+        //Questions Dashboard
+    Route::resource('questions', 'Admin\QuestionController');
 });
 
-Route::get('index', 'IndexController@index')->name('main');
 Route::get('change_locale/{locale}', 'IndexController@change_locale')->name('change_locale');
 
-//Questions Dashboard
-Route::resource('questions', 'Admin\QuestionController');
+
 
