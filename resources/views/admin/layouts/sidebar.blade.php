@@ -24,6 +24,11 @@
             <li class=" nav-item"><a href="{{route('questions.index')}}"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email">{{trans('admin_sidebar.questions')}}</span></a>
             </li>
 
+            <li class=" nav-item"><a href="{{route('sliders.index')}}"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email">{{trans('admin_sidebar.sliders')}}</span></a>
+
+            <li class=" nav-item"><a href="{{route('countries.index')}}"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email">{{trans('admin_sidebar.countries')}}</span></a>
+            </li>
+
         </ul>
     </div>
 </div>

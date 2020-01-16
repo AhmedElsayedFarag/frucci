@@ -151,6 +151,11 @@ return [
         'answer_en'                => 'answer in English',
         'question_ar'              => 'question in Arabic',
         'answer_ar'                => 'answer in Arabic',
+        'image'                    => 'image',
+        'link'                     => 'link',
+        'name_ar'                  => 'name in arabic',
+        'name_en'                  => 'name in english',
+        'parent_id'                => 'country',
     ],
 
 ];
