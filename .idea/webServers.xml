@@ -18,6 +18,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="09e5d0d1-7418-4ef4-b398-82d0f42609b8" name="alislah" url="http://173.212.194.200">
+        <fileTransfer host="173.212.194.200" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
