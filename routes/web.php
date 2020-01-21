@@ -30,14 +30,34 @@ Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
     //Sliders Dashboard
     Route::resource('sliders', 'Admin\SliderController');
 
-    //Countries Dashboard
-    Route::resource('countries', 'Admin\CountryController');
+    //Brands Dashboard
+    Route::resource('brands', 'Admin\BrandController');
 
-    //Cities Dashboard
-    Route::resource('cities', 'Admin\CityController');
+    //Countries-Cities Dashboard
+    Route::resource('countries-cities', 'Admin\CountryCityController');
+
+    //Categories Dashboard
+    Route::resource('categories', 'Admin\CategoryController');
+
+    //Products Dashboard
+    Route::resource('products', 'Admin\ProductController');
+
+    //Stores Dashboard
+    Route::resource('stores', 'Admin\StoreController');
+
+    //Users Dashboard
+    Route::resource('users', 'Admin\UserController');
+
+    //Packages Dashboard
+    Route::resource('packages', 'Admin\PackageController');
 });
 
 Route::get('change_locale/{locale}', 'IndexController@change_locale')->name('change_locale');
 
 
+Route::get('/', function () {
+    $user=\Illuminate\Support\Facades\Auth::user();
+
+    return view('welcome');
+});
 

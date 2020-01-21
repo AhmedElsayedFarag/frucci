@@ -4,5 +4,12 @@ return [
     'sliders' => 'Sliders',
     'countries' => 'Countries',
     'cities' => 'Cities',
+    'brands'   => 'Brands',
+    'countries_cities'   => 'Countries/Cities',
+    'categories'   => 'Categories',
+    'products'   => 'Products',
+    'stores' => 'Stores',
+    'users' => 'Users',
+    'packages' => 'Packages',
 
 ];

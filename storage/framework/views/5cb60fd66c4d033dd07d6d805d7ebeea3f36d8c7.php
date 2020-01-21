@@ -24,6 +24,11 @@
             <li class=" nav-item"><a href="<?php echo e(route('questions.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.questions')); ?></span></a>
             </li>
 
+            <li class=" nav-item"><a href="<?php echo e(route('sliders.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.sliders')); ?></span></a>
+
+            <li class=" nav-item"><a href="<?php echo e(route('countries.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.countries')); ?></span></a>
+            </li>
+
         </ul>
     </div>
 </div>

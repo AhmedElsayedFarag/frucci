@@ -41,6 +41,7 @@
       24 => 'App\\Providers\\EventServiceProvider',
       25 => 'App\\Providers\\RouteServiceProvider',
       26 => 'Spatie\\Permission\\PermissionServiceProvider',
+      27 => 'Intervention\\Image\\ImageServiceProvider',
     ),
     'aliases' => 
     array (
@@ -79,6 +80,7 @@
       'URL' => 'Illuminate\\Support\\Facades\\URL',
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
+      'Image' => 'Intervention\\Image\\Facades\\Image',
     ),
   ),
   'auth' => 
@@ -176,7 +178,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\frucci\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -226,7 +228,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'test',
+        'database' => 'ferrucci',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -236,7 +238,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'test',
+        'database' => 'ferrucci',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -256,7 +258,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'test',
+        'database' => 'ferrucci',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -271,7 +273,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'test',
+        'database' => 'ferrucci',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -315,12 +317,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\frucci\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\frucci\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -385,13 +387,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\frucci\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\frucci\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -441,7 +443,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\frucci\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -464,7 +466,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'F:\\arrr\\projects\\New folder\\frucci\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\frucci\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -589,7 +591,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\frucci\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -609,9 +611,9 @@
   array (
     'paths' => 
     array (
-      0 => 'F:\\arrr\\projects\\New folder\\frucci\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\frucci\\resources\\views',
     ),
-    'compiled' => 'F:\\arrr\\projects\\New folder\\frucci\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\frucci\\storage\\framework\\views',
   ),
   'translatable' => 
   array (
@@ -669,6 +671,10 @@
     'remote_sites_path' => '',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
+  ),
+  'image' => 
+  array (
+    'driver' => 'gd',
   ),
   'trustedproxy' => 
   array (

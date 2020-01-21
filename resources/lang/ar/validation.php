@@ -113,7 +113,7 @@ return [
 
 
         'city_id'=>'المدينه',
-        'parent_id'=>'الدوله',
+        'parent_id'=>'الأب',
         'category_id'=>'القسم الفرعى',
         'name'                  => 'الاسم',
         'username'              => 'اسم المُستخدم',
@@ -157,6 +157,26 @@ return [
         'link'                  => 'الرابط',
         'name_ar'               => 'الاسم بالعربية',
         'name_en'               => 'الاسم بالانجليزية',
+        'thumbnail'             => 'الصورة المصغرة',
+        'description_ar'        => 'الوصف بالعربية',
+        'description_en'        => 'الوصف بالانجليزية',
+        'short_description_ar'  => 'الوصف القصير بالعربية',
+        'short_description_en'  => 'الوصف القصير بالانجليزية',
+        'price_before'          => 'السعر',
+        'price_after'           => 'السعر بعد الخصم',
+        'colors'                => 'الألوان',
+        'status'                => 'الحالة',
+        'quantity'              => 'الكمية',
+        'serial_number'         => 'الرقم المميز',
+        'pattern_ar'            => 'النمط العربية',
+        'pattern_en'            => 'النمط بالانجليزية',
+        'material_ar'           => 'المادة بالعربية',
+        'material_en'           => 'المادة بالانجليزية',
+        'size_ar'               => 'الحجم بالعربية',
+        'size_en'               => 'الحجم بالانجليزية',
+        'brand_id'              => 'الماركة',
+        'price'                 => 'السعر',
+
 
     ],
 ];

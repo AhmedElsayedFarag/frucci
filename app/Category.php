@@ -9,4 +9,9 @@ class Category extends Model
 {
     Use Translatable;
     public $translatedAttributes = ['name'];
+
+    public function category()
+    {
+        return $this->belongsTo(self::class, 'parent_id', 'id');
+    }
 }
