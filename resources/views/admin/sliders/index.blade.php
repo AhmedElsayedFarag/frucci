@@ -53,7 +53,7 @@
                                         <td>{{$slider->head}}</td>
                                         <td>{{$slider->link}}</td>
                                         <td>{{$slider->link_title}}</td>
-                                        {{--<td><img src="{{asset( '/uploads/sliders/'. $slider->image)}}" alt="ad" style="width:200px; height:100px"></td>--}}
+                                        <td><img src="{{asset($slider->image)}}" alt="slider" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="{{route('sliders.edit', $slider->id)}}"><i class="fa fa-edit"></i></a>
 

@@ -43,10 +43,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.head_ar')); ?></span>
+                                                <span><?php echo e(trans('admin_content.link')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.head')); ?>" name="head_ar">
+                                                <input type="url" class="form-control" placeholder="<?php echo e(trans('admin_content.link')); ?>" name="link">
                                             </div>
                                         </div>
                                     </div>
@@ -65,10 +65,21 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.link')); ?></span>
+                                                <span><?php echo e(trans('admin_content.link_title_en')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="url" class="form-control" placeholder="<?php echo e(trans('admin_content.link')); ?>" name="link">
+                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.link_title')); ?>" name="link_title_en">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span><?php echo e(trans('admin_content.head_ar')); ?></span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.head')); ?>" name="head_ar">
                                             </div>
                                         </div>
                                     </div>
@@ -87,21 +98,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.link_title_en')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.link_title')); ?>" name="link_title_en">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
                                                 <span><?php echo e(trans('admin_content.image')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image" required>
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_upload_image')); ?>
 

@@ -52,8 +52,8 @@
                                         <td>
                                             <a href="<?php echo e(route('countries-cities.edit', $city->id)); ?>"><i class="fa fa-edit"></i></a>
 
-                                            <a title="delete" onclick="return true;" class="remove-alert" id="confirm-color" object_id="<?php echo e($city->id); ?>" delete_url="/countries-cities/" href="#">
-                                                <i class="fa fa-times"></i> </a>
+                                            
+                                                
                                         </td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

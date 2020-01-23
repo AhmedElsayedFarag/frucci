@@ -49,6 +49,7 @@ class QuestionController extends Controller
             $question->translateOrNew($locale)->answer = $request['answer_'.$locale];
         }//end for each
         $question->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('questions.index'));
     }
 
@@ -97,7 +98,10 @@ class QuestionController extends Controller
             $question->translateOrNew($locale)->question = $request['question_'.$locale];
             $question->translateOrNew($locale)->answer = $request['answer_'.$locale];
         }//end for each
-        $question->save();
+       //$question->save();
+        if($question->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('questions.index'));
     }
 

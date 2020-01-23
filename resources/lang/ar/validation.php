@@ -34,7 +34,7 @@ return [
     'date_format'          => 'لا يتوافق الحقل :attribute مع الشكل :format.',
     'different'            => 'يجب أن يكون الحقلان :attribute و :other مُختلفان',
     'digits'               => 'يجب أن يحتوي الحقل :attribute على :digits رقمًا/أرقام',
-    'digits_between'       => 'فضلا يجب أن أقل طول للرقم :min و اعلى طول :max ',
+    'digits_between'       => 'التليفون يجب أن يكون بين :min و :max رقم ',
     'dimensions'           => 'الـ :attribute يحتوي على أبعاد صورة غير صالحة.',
     'distinct'             => 'للحقل :attribute قيمة مُكرّرة.',
     'email'                => 'يجب أن يكون :attribute عنوان بريد إلكتروني صحيح البُنية',
@@ -176,6 +176,7 @@ return [
         'size_en'               => 'الحجم بالانجليزية',
         'brand_id'              => 'الماركة',
         'price'                 => 'السعر',
+        'product_ids'           => 'المنتجات',
 
 
     ],

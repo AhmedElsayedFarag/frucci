@@ -21,25 +21,28 @@
                 </ul>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('questions.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.questions')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('questions.index')); ?>"><i class="fa fa-question"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.questions')); ?></span></a>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('sliders.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.sliders')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('sliders.index')); ?>"><i class="fa fa-arrows"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.sliders')); ?></span></a>
 
-            <li class=" nav-item"><a href="<?php echo e(route('brands.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.brands')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('brands.index')); ?>"><i class="fa fa-shirtsinbulk"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.brands')); ?></span></a>
 
-            <li class=" nav-item"><a href="<?php echo e(route('countries-cities.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.countries_cities')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('countries-cities.index')); ?>"><i class="fa fa-flag"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.countries_cities')); ?></span></a>
 
-            <li class=" nav-item"><a href="<?php echo e(route('categories.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.categories')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('categories.index')); ?>"><i class="fa fa-joomla"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.categories')); ?></span></a>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('products.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.products')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('products.index')); ?>"><i class="fa fa-barcode"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.products')); ?></span></a>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('stores.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.stores')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('stores.index')); ?>"><i class="fa fa-life-ring"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.stores')); ?></span></a>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('users.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.users')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('users.index')); ?>"><i class="fa fa-user"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.users')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('packages.index')); ?>"><i class="fa fa-angellist"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.packages')); ?></span></a>
             </li>
 
         </ul>

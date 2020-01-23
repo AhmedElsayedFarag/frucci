@@ -34,7 +34,7 @@ class PackageRequest extends FormRequest
                     'name_ar' => 'required',
                     'name_en' => 'required',
                     'price' => 'required|numeric',
-                    'product_id' => 'required',
+                    'product_ids' => 'required',
                 ];
 
             case 'PUT':
@@ -44,7 +44,7 @@ class PackageRequest extends FormRequest
                     'name_ar' => 'required',
                     'name_en' => 'required',
                     'price' => 'required|numeric',
-                    'product_id' => 'required',
+                    'product_ids' => 'required',
                 ];
 
         }

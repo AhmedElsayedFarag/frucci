@@ -4,7 +4,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('pageSubTitle'); ?>
-    <?php echo e(trans('admin_content.categories')); ?>
+    <?php echo e(trans('admin_content.edit_category')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -41,11 +41,12 @@
 
                             <div class="form-body">
                                 <div class="row">
+                                <div class="row">
                                     <?php $__currentLoopData = $category->getTranslationsArray(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $locale =>$value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-md-2">
-                                                    <span><?php echo e(trans('admin_content.name_ar')); ?></span>
+                                                    <span><?php echo e(trans("admin_content.name_$locale")); ?></span>
                                                 </div>
                                                 <div class="col-md-10">
                                                     <input class="form-control" placeholder="<?php echo e(trans('admin_content.category')); ?>" name="<?php echo e("name_$locale"); ?>" value="<?php echo e($value['name']); ?>" required>

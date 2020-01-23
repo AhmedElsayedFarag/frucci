@@ -46,6 +46,7 @@ class CountryCityController extends Controller
         }//end for each
         $countryCity->parent_id = $request->parent_id;
         $countryCity->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('countries-cities.index'));
     }
 
@@ -89,7 +90,10 @@ class CountryCityController extends Controller
             $countryCity->translateOrNew($locale)->name = $request['name_'.$locale];
         }//end for each
         $countryCity->parent_id = $request->parent_id;
-        $countryCity->save();
+        //$countryCity->save();
+        if($countryCity->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('countries-cities.index'));
     }
 

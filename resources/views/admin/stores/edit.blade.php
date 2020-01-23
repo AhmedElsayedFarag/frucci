@@ -43,7 +43,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.name')}}</span>
+                                                <span>{{trans("admin_content.name_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.name')}}" name="{{"name_$locale"}}" value="{{$value['name']}}" required>
@@ -57,7 +57,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.address')}}</span>
+                                                <span>{{trans("admin_content.address_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.address')}}" name="{{"address_$locale"}}" value="{{$value['address']}}" required>
@@ -71,13 +71,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.working_times')}}</span>
+                                                <span>{{trans("admin_content.working_times_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.working_times')}}" name="{{"working_times_$locale"}}" required>{{$value['working_times']}}</textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_working_times')}}
-                                                </div>
+                                                <textarea  class="form-control myTextArea" rows="7" placeholder="{{trans('admin_content.working_times')}}" name="{{"working_times_$locale"}}">{{$value['working_times']}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -88,32 +85,23 @@
                                                 <span>{{trans('admin_content.phone')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="tel" class="form-control" placeholder="{{trans('admin_content.phone')}}" value="{{$store->phone}}" name="phone">
+                                                <input type="tel" class="form-control" placeholder="{{trans('admin_content.phone')}}" minlength="10" maxlength="14" value="{{$store->phone}}" name="phone">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.lat')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="number" class="form-control" placeholder="{{trans('admin_content.lat')}}" value="{{$store->lat}}" name="lat">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.long')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="number" class="form-control" placeholder="{{trans('admin_content.long')}}" value="{{$store->long}}" name="long">
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>{{trans('admin_content.location')}}</span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div id="map" style="height: 350px;"></div>
+                                                    <input type="hidden" name="lat" value="{{$store->lat}}" id="lat">
+                                                    <input type="hidden" name="long" value="{{$store->long}}" id="lng">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                         <div class="form-group  col-md-6">
                                             <label>{{trans('admin_content.city')}}</label>
@@ -141,4 +129,31 @@
 
     </div>
 
+@endsection
+@section('scripts')
+    <script>
+        var map = L.map('map').setView([{{$store->lat}}, {{$store->long}}], 5);
+        console.log({{$store->long}});
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([{{$store->lat}}, {{$store->long}}],{
+            draggable: true
+
+        }).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+
+        marker.on('dragend', function (e) {
+            var lat = marker.getLatLng().lat;
+            var lng = marker.getLatLng().lng;
+            $('#lat').val(lat);
+            $('#lng').val(lng);
+            console.log(lat);
+            console.log(lng);
+        });
+
+    </script>
 @endsection

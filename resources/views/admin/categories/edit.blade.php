@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageSubTitle')
-    {{trans('admin_content.categories')}}
+    {{trans('admin_content.edit_category')}}
 @endsection
 
 @section('content')
@@ -39,11 +39,12 @@
                             {{method_field('PATCH')}}  {{csrf_field()}}
                             <div class="form-body">
                                 <div class="row">
+                                <div class="row">
                                     @foreach($category->getTranslationsArray() as $locale =>$value)
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-md-2">
-                                                    <span>{{trans('admin_content.name_ar')}}</span>
+                                                    <span>{{trans("admin_content.name_$locale")}}</span>
                                                 </div>
                                                 <div class="col-md-10">
                                                     <input class="form-control" placeholder="{{trans('admin_content.category')}}" name="{{"name_$locale"}}" value="{{$value['name']}}" required>
@@ -61,7 +62,7 @@
                                                     <span>{{trans('admin_content.image')}}</span>
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <input type="file" class="form-control" name="image">
+                                                    <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp">
                                                     <div class="invalid-feedback">
                                                         {{trans('admin_content.please_upload_image')}}
                                                     </div>
@@ -79,7 +80,7 @@
                                             @endforeach
                                         </select>
                                         <div class="invalid-feedback">
-                                            {{trans('admin_content.please_enter_name')}}
+                                            {{trans('admin_content.please_choose_category')}}
                                         </div>
                                     </div>
 

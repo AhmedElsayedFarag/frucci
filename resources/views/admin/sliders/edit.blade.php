@@ -35,28 +35,28 @@
                 <div class="card-content">
                     <div class="card-body">
                         @include('alert')
-                        <form class="form form-horizontal needs-validation" method="post" action="{{route('sliders.update', $slider->id)}}">
-                            @csrf
+                        <form class="form form-horizontal needs-validation" method="post" enctype="multipart/form-data" action="{{route('sliders.update', $slider->id)}}">
+                            {{method_field('PATCH')}}  {{csrf_field()}}
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.head')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.head')}}" name="{{"head_$locale"}}" value="$value['head']">
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
                                                 <span>{{trans('admin_content.link')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="url" class="form-control" placeholder="{{trans('admin_content.link')}}" name="link">
+                                                <input type="url" class="form-control" placeholder="{{trans('admin_content.link')}}" name="link" value="{{$slider->link}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @foreach($slider->getTranslationsArray() as $locale =>$value)
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span>{{trans("admin_content.head_$locale")}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.head')}}" name="{{"head_$locale"}}" value="{{$value['head']}}">
                                             </div>
                                         </div>
                                     </div>
@@ -64,13 +64,14 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.link_title')}}</span>
+                                                <span>{{trans("admin_content.link_title_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.link_title')}}" name="{{"link_title_$locale"}}" value="$value['link_title']">
+                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.link_title')}}" name="{{"link_title_$locale"}}" value="{{$value['link_title']}}">
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
 
                                     <div class="col-12">
                                         <div class="form-group row">
@@ -78,7 +79,7 @@
                                                 <span>{{trans('admin_content.image')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp">
                                             </div>
                                         </div>
                                     </div>

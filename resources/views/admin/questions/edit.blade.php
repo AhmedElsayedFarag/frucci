@@ -36,7 +36,7 @@
                     <div class="card-body">
                         @include('alert')
                         <form class="form form-horizontal needs-validation" method="post" action="{{route('questions.update', $question->id)}}">
-                            {{method_field('PATCH')}} {{csrf_token()}}
+                            {{method_field('PATCH')}} {{csrf_field()}}
                             @csrf
                             <div class="form-body">
                                 <div class="row">
@@ -44,10 +44,10 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-md-2">
-                                                    <span>{{trans("admin_content.question")}}</span>
+                                                    <span>{{trans("admin_content.question_$locale")}}</span>
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="{{"question_$locale"}}" required>{{$value['question']}}</textarea>
+                                                    <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.question')}}" name="{{"question_$locale"}}" required>{{$value['question']}}</textarea>
                                                     <div class="invalid-feedback">
                                                         {{trans('admin_content.please_enter_question')}}
                                                     </div>
@@ -57,12 +57,12 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-md-2">
-                                                    <span>{{trans("admin_content.answer")}}</span>
+                                                    <span>{{trans("admin_content.answer_$locale")}}</span>
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <textarea class="form-control" placeholder="{{trans('admin_content.answer')}}" name="{{"answer_$locale"}}" required>{{$value['answer']}}</textarea>
+                                                    <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.answer')}}" name="{{"answer_$locale"}}" required>{{$value['answer']}}</textarea>
                                                     <div class="invalid-feedback">
-                                                        {{trans('admin_content.please_enter_question')}}
+                                                        {{trans('admin_content.please_enter_answer')}}
                                                     </div>
                                                 </div>
                                             </div>

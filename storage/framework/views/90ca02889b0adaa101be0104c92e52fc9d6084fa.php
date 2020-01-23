@@ -52,7 +52,7 @@
                                         <td><?php echo e($slider->head); ?></td>
                                         <td><?php echo e($slider->link); ?></td>
                                         <td><?php echo e($slider->link_title); ?></td>
-                                        
+                                        <td><img src="<?php echo e(asset($slider->image)); ?>" alt="slider" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="<?php echo e(route('sliders.edit', $slider->id)); ?>"><i class="fa fa-edit"></i></a>
 

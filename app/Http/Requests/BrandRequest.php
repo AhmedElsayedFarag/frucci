@@ -31,8 +31,8 @@ class BrandRequest extends FormRequest
                 case 'POST':
                     return [
                         'image' => 'required|image',
-                        'name_ar' => 'nullable',
-                        'name_en' => 'nullable',
+                        'name_ar' => 'required',
+                        'name_en' => 'required',
                         'description_ar' => 'nullable',
                         'description_en' => 'nullable',
                     ];
@@ -41,8 +41,8 @@ class BrandRequest extends FormRequest
                 case 'PATCH':
                     return [
                         'image' => 'image',
-                        'name_ar' => 'nullable',
-                        'name_en' => 'nullable',
+                        'name_ar' => 'required',
+                        'name_en' => 'required',
                         'description_ar' => 'nullable',
                         'description_en' => 'nullable',
                     ];

@@ -48,8 +48,8 @@
                 @foreach($questions as $question)
                     <tr align="center">
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$question->question}}</td>
-                        <td>{{$question->answer}}</td>
+                        <td>{{substr($question->question, 0, 50)}}</td>
+                        <td>{{substr($question->answer, 0 ,50)}}</td>
                         <td>
                             <a href="{{route('questions.edit', $question->id)}}"><i class="fa fa-edit"></i></a>
 

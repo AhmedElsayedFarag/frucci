@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageSubTitle')
-    {{trans('admin_content.categories')}}
+    {{trans('admin_content.add_category')}}
 @endsection
 
 @section('content')
@@ -42,6 +42,19 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
+                                                <span>{{trans('admin_content.name_en')}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input class="form-control" placeholder="{{trans('admin_content.category')}}" name="name_en" required>
+                                                <div class="invalid-feedback">
+                                                    {{trans('admin_content.please_enter_name')}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
                                                 <span>{{trans('admin_content.name_ar')}}</span>
                                             </div>
                                             <div class="col-md-10">
@@ -56,24 +69,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.name_en')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input class="form-control" placeholder="{{trans('admin_content.category')}}" name="name_en" required>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_name')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
                                                 <span>{{trans('admin_content.image')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image" required>
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp" required>
                                                 <div class="invalid-feedback">
                                                     {{trans('admin_content.please_upload_image')}}
                                                 </div>
@@ -91,7 +90,7 @@
                                             @endforeach
                                         </select>
                                         <div class="invalid-feedback">
-                                            {{trans('admin_content.please_enter_name')}}
+                                            {{trans('admin_content.please_choose_category')}}
                                         </div>
                                     </div>
 

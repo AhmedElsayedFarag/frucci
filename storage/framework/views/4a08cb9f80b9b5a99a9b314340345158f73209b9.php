@@ -76,7 +76,7 @@
                                                 <span><?php echo e(trans('admin_content.phone')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.phone')); ?>" name="phone">
+                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.phone')); ?>" name="phone" minlength="10" maxlength="14" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_enter_phone')); ?>
 
@@ -91,7 +91,7 @@
                                                 <span><?php echo e(trans('admin_content.password')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.password')); ?>" name="password" required>
+                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.password')); ?>" minlength="6" name="password" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_enter_password')); ?>
 
@@ -121,7 +121,7 @@
                                                 <span><?php echo e(trans('admin_content.image')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp">
                                             </div>
                                         </div>
                                     </div>

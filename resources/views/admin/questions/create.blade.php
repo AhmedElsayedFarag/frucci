@@ -42,10 +42,34 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.question_in_arabic')}}</span>
+                                                <span>{{trans('admin_content.question_en')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="question_ar" required></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.question')}}" name="question_en" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    {{trans('admin_content.please_enter_question')}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span>{{trans('admin_content.answer_en')}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.answer')}}" name="answer_en" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    {{trans('admin_content.please_enter_answer')}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span>{{trans('admin_content.question_ar')}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.question')}}" name="question_ar" required></textarea>
                                                 <div class="invalid-feedback">
                                                     {{trans('admin_content.please_enter_question')}}
                                                 </div>
@@ -55,40 +79,17 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.question_in_english')}}</span>
+                                                <span>{{trans('admin_content.answer_ar')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.question')}}" name="question_en" required></textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_question')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.answer_in_arabic')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.answer')}}" name="answer_ar" required></textarea>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_answer')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.answer_in_english')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.answer')}}" name="answer_en" required></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.answer')}}" name="answer_ar" required></textarea>
                                                 <div class="invalid-feedback">
                                                     {{trans('admin_content.please_enter_answer')}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-12 text-center">
                                         <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">{{trans('admin_content.add')}}</button>
                                     </div>

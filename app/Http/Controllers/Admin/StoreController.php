@@ -53,6 +53,7 @@ class StoreController extends Controller
         $store->phone = $request->phone;
         $store->city_id = $request->city_id;
         $store->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('stores.index'));
     }
 
@@ -101,7 +102,10 @@ class StoreController extends Controller
         $store->long = $request->long;
         $store->phone = $request->phone;
         $store->city_id = $request->city_id;
-        $store->save();
+        //$store->save();
+        if($store->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('stores.index'));
     }
 

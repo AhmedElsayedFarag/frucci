@@ -181,6 +181,7 @@ return [
         'password_confirmation'    => 'password confirmation',
         'phone'                    => 'phone',
         'price'                    => 'price',
+        'product_idس'              => 'products',
     ],
 
 ];

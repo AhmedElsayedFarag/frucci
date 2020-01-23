@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::where('id', '!=', auth()->id())->get();
         return view('admin.users.index', compact('users'));
     }
 
@@ -49,6 +49,7 @@ class UserController extends Controller
 
         }//end if
         User::create($requestData);
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('users.index'));
     }
 
@@ -71,7 +72,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.users.edit');
     }
 
     /**
@@ -81,9 +82,25 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        //
+        if($request->password != ''){
+            $password = bcrypt($request['password']);
+            $data = array_merge($request->except('password'), ['password' => $password ]);
+            User::find($id)->update($data);
+        }else{
+            User::find($id)->update($request->except('password'));
+        }
+        if ($request->hasFile('image')) {
+            $picture_name = 'uploads/'.time().str_shuffle('abcdef').'.'.$request->file('image')->getClientOriginalExtension();
+            Image::make($request->file('image'))->save(public_path("$picture_name"));
+            $requestData['image'] = $picture_name;
+            User::find($id)->update($requestData);
+        }
+        if(auth()->user()->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
+        return redirect(route('users.index'));
     }
 
     /**
@@ -100,12 +117,16 @@ class UserController extends Controller
     public function setStatus($id)
     {
         $user = User::findOrFail($id);
+        if ($user->is_active == 1){
+            $user->is_active = 0;
+            $user->save();
+            return response()->json('ban');
 
-        if ($user->is_active == 1)
-            $user->update(['is_active' => 0]);
-        else
-            $user->update(['is_active' => 1]);
+        }else{
+            $user->is_active = 1;
+            $user->save();
+            return response()->json('unban');
+        }
 
-        return redirect(route('users.index'));
     }
 }

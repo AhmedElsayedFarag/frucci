@@ -4,7 +4,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('pageSubTitle'); ?>
-    <?php echo e(trans('admin_content.categories')); ?>
+    <?php echo e(trans('admin_content.add_category')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -43,6 +43,20 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
+                                                <span><?php echo e(trans('admin_content.name_en')); ?></span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input class="form-control" placeholder="<?php echo e(trans('admin_content.category')); ?>" name="name_en" required>
+                                                <div class="invalid-feedback">
+                                                    <?php echo e(trans('admin_content.please_enter_name')); ?>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
                                                 <span><?php echo e(trans('admin_content.name_ar')); ?></span>
                                             </div>
                                             <div class="col-md-10">
@@ -58,25 +72,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name_en')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input class="form-control" placeholder="<?php echo e(trans('admin_content.category')); ?>" name="name_en" required>
-                                                <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_enter_name')); ?>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
                                                 <span><?php echo e(trans('admin_content.image')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image" required>
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_upload_image')); ?>
 
@@ -95,7 +94,7 @@
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                         <div class="invalid-feedback">
-                                            <?php echo e(trans('admin_content.please_enter_name')); ?>
+                                            <?php echo e(trans('admin_content.please_choose_category')); ?>
 
                                         </div>
                                     </div>

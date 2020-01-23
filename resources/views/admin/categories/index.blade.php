@@ -51,9 +51,9 @@
                                     <tr align="center">
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$subCategory->name}}</td>
-                                        <td><img src="{{asset($subCategory->image)}}" alt="ad" style="width:200px; height:100px"></td>
+                                        <td><img src="{{asset($subCategory->image)}}" alt="category" style="width:200px; height:100px"></td>
                                         <td>{{$subCategory->category->name}}</td>
-                                        <td><img src="{{asset($subCategory->category->image)}}" alt="ad" style="width:200px; height:100px"></td>
+                                        <td><img src="{{$subCategory->category->image}}" alt="ad" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="{{route('categories.edit', $subCategory->id)}}"><i class="fa fa-edit"></i></a>
 

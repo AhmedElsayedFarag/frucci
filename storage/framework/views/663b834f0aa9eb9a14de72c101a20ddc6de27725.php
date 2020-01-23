@@ -44,14 +44,21 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/app-assets/css'.$locale.'/pages/card-analytics.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/app-assets/css'.$locale.'/plugins/tour/tour.css')); ?>">
     <!-- END: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/app-assets/css-rtl/pages/data-list-view.css')); ?>">
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/assets/css'.$locale.'/style.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/app-assets/css'.$locale.'/style.css')); ?>">
     <?php if($locale=='ar'): ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/assets/css/style-rtl.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('admin/app-assets/css/style-rtl.css')); ?>">
     <?php endif; ?>
 
     <!-- END: Custom CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
 
 </head>
 <!-- END: Head-->
@@ -98,6 +105,7 @@
 <script src="<?php echo e(asset('admin/app-assets/js/core/app.js')); ?>"></script>
 <script src="<?php echo e(asset('admin/app-assets/js/scripts/components.js')); ?>"></script>
 <!-- END: Theme JS-->
+<script src="<?php echo e(asset('admin/app-assets/js/scripts/ui/data-list-view.js')); ?>"></script>
 
 <!-- BEGIN: Page JS-->
 <script src="<?php echo e(asset('admin/app-assets/js/scripts/pages/dashboard-analytics.js')); ?>"></script>
@@ -108,7 +116,89 @@
 <script src="<?php echo e(asset('admin/app-assets/js/scripts/main.js')); ?>"></script>
 <!-- END: Main JS-->
 
+
 <?php echo $__env->yieldContent('scripts'); ?>
+
+
+<script>
+    $(document).on('click', '.remove-alert', function (e) {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'swal2-confirm',
+                cancelButton: 'swal2-cancel'
+            },
+            buttonsStyling: true
+        });
+        swalWithBootstrapButtons.fire({
+            title: '<?php echo e(trans('sweet_alert.title')); ?>',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: '<?php echo e(trans('sweet_alert.yes')); ?>',
+            cancelButtonText: '<?php echo e(trans('sweet_alert.no')); ?>',
+        }).then((result) => {
+            if (result.value) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                })
+                var id = $(this).attr('object_id');
+                var d_url = $(this).attr('delete_url');
+                var elem = $(this).parent('td').parent('tr');
+                var proelem =$(this).closest(".remove-oneitem"),
+                    token = $('meta[name="csrf-token"]').attr('content');
+                $.ajax({
+                    type: 'post',
+                    url: '/admin'+d_url+id,
+                    data: {
+                        _method:'delete',
+                        _token: token
+                    } ,
+                    dataType: 'json',
+                    success: function (result) {
+                        console.log('result', result);
+                        elem.remove();
+                        proelem.remove();
+                        swalWithBootstrapButtons.fire({
+                            title: '<?php echo e(trans('sweet_alert.deleted_successfully')); ?>',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                    }
+                });
+            } else if (
+                // / Read more about handling dismissals below /
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire({
+                    title: '<?php echo e(trans('sweet_alert.cancelled')); ?>',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+
+            }
+        })
+    });
+
+
+
+</script>
+
+<?php if(session()->has('message')): ?>
+
+
+    <script>
+        Swal.fire({
+            title: '<?php echo e(session()->get('message')); ?>',
+            timer: 1000,
+            showCancelButton: false,
+            showConfirmButton: false,
+        });
+        location.reload();
+    </script>
+
+<?php endif; ?>
+
 
 </body>
 <!-- END: Body-->

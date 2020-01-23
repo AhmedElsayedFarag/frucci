@@ -30,9 +30,9 @@ class StoreRequest extends FormRequest
             'address_en' => 'required',
             'working_times_ar' => 'required',
             'working_times_en' => 'required',
-            'lat' => 'nullable|numeric',
-            'long' => 'nullable|numeric',
-            'phone' => 'nullable|numeric',
+            'lat' => 'required',
+            'long' => 'required',
+            'phone' => 'nullable|numeric|digits_between:10,14',
             'city_id' => 'required',
         ];
     }

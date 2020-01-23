@@ -33,6 +33,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <div class="table-responsive">
+
                             <a href="{{route('brands.create')}}" class="btn btn-primary btn-block my-2 waves-effect waves-light">{{trans('admin_content.add_brand')}} </a>
                             <table class="table table-bordered mb-0">
                                 <thead>
@@ -49,8 +50,8 @@
                                     <tr align="center">
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$brand->name}}</td>
-                                        <td>{{$brand->description}}</td>
-                                        <td><img src="{{asset($brand->image)}}" alt="ad" style="width:200px; height:100px"></td>
+                                        <td>{{substr($brand->description,0,50)}}</td>
+                                        <td><img src="{{asset($brand->image)}}" alt="brand" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="{{route('brands.edit', $brand->id)}}"><i class="fa fa-edit"></i></a>
 
@@ -82,5 +83,6 @@
 
 
 @section('scripts')
+
 
 @endsection

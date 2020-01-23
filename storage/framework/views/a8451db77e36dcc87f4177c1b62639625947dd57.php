@@ -41,44 +41,34 @@
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-12">
+                                        <?php $__currentLoopData = Localization::getLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name_ar')); ?></span>
+                                                <span><?php echo e(trans("admin_content.name_$key")); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="name_ar">
+                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="<?php echo e("name_$key"); ?>" required>
                                             </div>
-                                        </div>
+                                            <div class="invalid-feedback">
+                                                <?php echo e(trans('admin_content.please_enter_name')); ?>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name_en')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="name_en">
                                             </div>
                                         </div>
-                                    </div>
+                                        
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span><?php echo e(trans('admin_content.description_'.$key)); ?></span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="7" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("description_$key"); ?>" required></textarea>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    <?php echo e(trans('admin_content.please_enter_description')); ?>
 
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.description_ar')); ?></span>
+                                                </div>
                                             </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="description_ar"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.description_en')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="description_en"></textarea>
-                                            </div>
-                                        </div>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                                     </div>
 
                                     <div class="col-12">
@@ -87,7 +77,7 @@
                                                 <span><?php echo e(trans('admin_content.image')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image" required>
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_upload_image')); ?>
 
@@ -95,6 +85,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+
 
                                     <div class="col-12 text-center">
                                         <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light"><?php echo e(trans('admin_content.add')); ?></button>

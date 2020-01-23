@@ -40,20 +40,6 @@
                             <?php echo csrf_field(); ?>
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name_ar')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input class="form-control" placeholder="<?php echo e(trans('admin_content.country_city')); ?>" name="name_ar" required>
-                                                <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_enter_name')); ?>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="col-12">
                                         <div class="form-group row">
@@ -70,6 +56,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span><?php echo e(trans('admin_content.name_ar')); ?></span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input class="form-control" placeholder="<?php echo e(trans('admin_content.country_city')); ?>" name="name_ar" required>
+                                                <div class="invalid-feedback">
+                                                    <?php echo e(trans('admin_content.please_enter_name')); ?>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
                                     <div class="form-group  col-md-6">
                                         <label><?php echo e(trans('admin_content.country')); ?></label>
                                         <select class="form-control" name ="parent_id" required>
@@ -80,7 +83,7 @@
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                         <div class="invalid-feedback">
-                                            <?php echo e(trans('admin_content.please_enter_name')); ?>
+                                            <?php echo e(trans('admin_content.please_choose_country')); ?>
 
                                         </div>
                                     </div>

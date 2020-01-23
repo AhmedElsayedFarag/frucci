@@ -49,6 +49,60 @@
                                             </div>
                                         </div>
 
+
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>{{trans('admin_content.description_ar')}}</span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.description')}}" name="description_ar" required></textarea>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>{{trans('admin_content.short_description_ar')}}</span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.description')}}" name="short_description_ar" required></textarea>
+                                                </div>
+                                            </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span>{{trans('admin_content.pattern_ar')}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.pattern')}}" name="pattern_ar" required>
+                                            </div>
+                                        </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <span>{{trans('admin_content.material_ar')}}</span>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="{{trans('admin_content.material')}}" name="material_ar" required>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <span>{{trans('admin_content.size_ar')}}</span>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="{{trans('admin_content.size')}}" name="size_ar" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
                                                 <span>{{trans('admin_content.name_en')}}</span>
@@ -62,54 +116,28 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.description_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.description')}}" name="description_ar" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
                                                 <span>{{trans('admin_content.description_en')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.description')}}" name="description_en" required></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.description')}}" name="description_en" required></textarea>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.short_description_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.description')}}" name="short_description_ar" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
                                                 <span>{{trans('admin_content.short_description_en')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.description')}}" name="short_description_en" required></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.description')}}" name="short_description_en" required></textarea>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.pattern_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.pattern')}}" name="pattern_ar" required>
-                                            </div>
-                                        </div>
+
 
                                         <div class="form-group row">
                                             <div class="col-md-2">
@@ -122,14 +150,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.material_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.material')}}" name="material_ar" required>
-                                            </div>
-                                        </div>
+
 
                                         <div class="form-group row">
                                             <div class="col-md-2">
@@ -142,14 +163,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.size_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.size')}}" name="size_ar" required>
-                                            </div>
-                                        </div>
+
 
                                         <div class="form-group row">
                                             <div class="col-md-2">
@@ -185,11 +199,16 @@
                                                 <span>{{trans('admin_content.colors')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="color" class="form-control" placeholder="{{trans('admin_content.colors')}}" name="colors">
+                                                <div>
+                                                    <input type="color" class="form-control" placeholder="{{trans('admin_content.colors')}}" name="colors">
+                                                </div>
+
+                                                <button type="button" class="btn btn-primary" id="addBtn">+</button>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group  col-md-6">
+                                        <div class="form-group col-md-6">
                                             <label>{{trans('admin_content.status')}}</label>
                                             <select class="form-control" name ="status" required>
                                                 <option value="" selected disabled >{{trans('admin_content.choose_one')}}</option>
@@ -201,6 +220,7 @@
                                             </div>
                                         </div>
 
+                                    <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
                                                 <span>{{trans('admin_content.quantity')}}</span>
@@ -226,7 +246,7 @@
                                                 <span>{{trans('admin_content.image')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="thumbnail" required>
+                                                <input type="file" class="form-control" name="thumbnail" accept=".gif, .jpg, .png, .webp" required>
                                                 <div class="invalid-feedback">
                                                     {{trans('admin_content.please_upload_image')}}
                                                 </div>
@@ -260,4 +280,12 @@
 
     </div>
 
+@endsection
+@section('scripts')
+    <script>
+        $('#addBtn').click(function () {
+           $(this).parent().find('div'). append('<input type="color" class="form-control" name="colors">\n');
+        });
+
+    </script>
 @endsection

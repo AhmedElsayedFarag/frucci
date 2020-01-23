@@ -10,6 +10,7 @@
 @section('content')
 
     <!--start div-->
+
     <div class="row" style="display:block">
 
 
@@ -53,14 +54,19 @@
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->phone}}</td>
-                                        <td>{{$user->is_active == 1 ? trans('admin_content.active') : trans('admin_content.inactive')}}</td>
-                                        <td><img src="{{asset($user->image ? asset($user->image) : 'default.jpg')}}" alt="user" style="width:200px; height:100px"></td>
+                                        <td>{{$user->is_active == 1 ? trans('admin_content.active') : trans('admin_content.banned')}}</td>
+                                        <td><img src="{{asset($user->image ? asset($user->image) : 'avatar.png')}}" alt="user" style="width:200px; height:100px"></td>
+                                        @if(auth()->id())
+                                        <td>
+                                            <a @if($user-> is_active == 0 ) title="unban" @else title="ban" @endif onclick="return true;" id="confirm-color" object_id='{{$user->id}}' object_status='{{$user->is_active}}'  class="ban-unlock">
+                                                @if($user->is_active == 1)<i class="fa fa-ban"></i> @else <i class="fa fa-unlock"></i>@endif </a>
+                                        </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -80,5 +86,95 @@
 
 
 @section('scripts')
+    <script>
+
+
+        $(document).on('click', '.ban-unlock', function (e) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'swal2-confirm',
+                    cancelButton: 'swal2-cancel'
+                },
+                buttonsStyling: true
+            });
+            swalWithBootstrapButtons.fire({
+                title: '{{trans('sweet_alert.title')}}',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '{{trans('sweet_alert.yes')}}',
+                cancelButtonText: '{{trans('sweet_alert.no')}}',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    })
+                    var id = $(this).attr('object_id');
+                    var status = $(this).attr('object_status');
+                        token = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        type: 'post',
+                        url: 'ban-user/'+id,
+                        data: {
+                            _method:'get',
+                            _token: token
+                        } ,
+                        dataType: 'json',
+                        success: function(response) {
+
+                            if (response === 'ban') {
+                                Swal.fire({
+                                    type: 'success',
+                                    title: '{{trans('sweet_alert.banned')}}',
+                                    showConfirmButton: false,
+                                    timer: 1500
+
+
+
+                                })
+                                window.location.reload();
+
+                            } else if (response === 'unban') {
+                                Swal.fire({
+                                    type: 'success',
+                                    title: '{{trans('sweet_alert.unbanned')}}',
+                                    showConfirmButton: false,
+                                    timer: 1500
+
+
+                                })
+                                window.location.reload();
+
+
+
+
+
+
+
+
+
+                            }
+
+
+                        }
+                    });
+                } else if (
+                    // / Read more about handling dismissals below /
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire({
+                        title: '{{trans('sweet_alert.cancelled')}}',
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+
+                }
+            })
+        });
+
+
+
+    </script>
 
 @endsection

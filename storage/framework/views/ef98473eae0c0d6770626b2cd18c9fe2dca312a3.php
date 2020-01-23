@@ -47,8 +47,8 @@
                 <?php $__currentLoopData = $questions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $question): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr align="center">
                         <td><?php echo e($loop->iteration); ?></td>
-                        <td><?php echo e($question->question); ?></td>
-                        <td><?php echo e($question->answer); ?></td>
+                        <td><?php echo e(substr($question->question, 0, 50)); ?></td>
+                        <td><?php echo e(substr($question->answer, 0 ,50)); ?></td>
                         <td>
                             <a href="<?php echo e(route('questions.edit', $question->id)); ?>"><i class="fa fa-edit"></i></a>
 

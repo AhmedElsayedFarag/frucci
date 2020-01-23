@@ -45,10 +45,14 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name')); ?></span>
+                                                <span><?php echo e(trans("admin_content.name_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="<?php echo e("name_$locale"); ?>" value="<?php echo e($value['name']); ?>">
+                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="<?php echo e("name_$locale"); ?>" value="<?php echo e($value['name']); ?>" required>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <?php echo e(trans('admin_content.please_enter_name')); ?>
+
                                             </div>
                                         </div>
                                     </div>
@@ -56,10 +60,14 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.description')); ?></span>
+                                                <span><?php echo e(trans("admin_content.description_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("description_$locale"); ?>"><?php echo e($value['description']); ?></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("description_$locale"); ?>" required><?php echo e($value['description']); ?></textarea>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                <?php echo e(trans('admin_content.please_enter_description')); ?>
+
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +79,7 @@
                                                 <span><?php echo e(trans('admin_content.image')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="image">
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp">
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_upload_image')); ?>
 

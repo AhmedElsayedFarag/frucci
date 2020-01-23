@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PackageRequest;
 use App\Package;
+use App\PackageProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -19,7 +20,8 @@ class PackageController extends Controller
     public function index()
     {
         $packages = Package::all();
-        return view('admin.packages.index', compact('packages'));
+        $package_products = PackageProduct::all();
+        return view('admin.packages.index', compact('packages', 'package_products'));
     }
 
     /**
@@ -52,8 +54,16 @@ class PackageController extends Controller
             $package->image = $picture_name;
         }//end if
         $package->price = $request->price;
-        $package->products()->attach($request->product_id);
         $package->save();
+
+        for ($x=0;$x<count($request->product_ids);$x++){
+            $package_product = new PackageProduct();
+            $package_product->product_id = $request->product_ids[$x];
+            $package_product->package_id = $package->id;
+            $package_product->save();
+        }
+
+//        $package->products()->sync($request->product_id);
         return redirect(route('packages.index'));
     }
 
@@ -78,7 +88,9 @@ class PackageController extends Controller
     {
         $products = Product::all();
         $package = Package::findOrFail($id);
-        return view('admin.packages.edit', compact('products', 'package'));
+
+//        $package_product = PackageProduct::where('package_id', $id)->get();
+        return view('admin.packages.edit', compact('package','products'));
     }
 
     /**
@@ -101,8 +113,14 @@ class PackageController extends Controller
             Image::make($request->file('image'))->save(public_path("$picture_name"));
             $package->image = $picture_name;
         }//end if
-        $package->products()->attach($request->product_id);
         $package->save();
+        for ($x=0;$x<count($request->product_ids);$x++){
+            $package_product = new PackageProduct();
+            $package_product->product_id = $request->product_ids[$x];
+            $package_product->package_id = $package->id;
+            $package_product->save();
+        }
+        //$package->products()->sync($request->product_id);
         return redirect(route('packages.index'));
     }
 

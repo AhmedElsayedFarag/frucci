@@ -40,8 +40,8 @@ class CategoryRequest extends FormRequest
             case 'PATCH':
                 return [
                     'image' => 'image',
-                    'name_ar' => 'required',
                     'name_en' => 'required',
+                    'name_ar' => 'required',
                     'parent_id' => 'required',
                 ];
 

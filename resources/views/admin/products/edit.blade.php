@@ -43,7 +43,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.name')}}</span>
+                                                <span>{{trans("admin_content.name_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.name')}}" name="{{"name_$locale"}}" value="{{$value['name']}}" required>
@@ -54,10 +54,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.description')}}</span>
+                                                <span>{{trans("admin_content.description_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.description')}}" name="{{"description_$locale"}}" required>{{$value['description']}}</textarea>
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.description')}}" name="{{"description_$locale"}}" required>{{$value['description']}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -65,10 +65,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.short_description')}}</span>
+                                                <span>{{trans("admin_content.short_description_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.description')}}" name="{{"short_description_$locale"}}" required>{{$value['short_description']}}</textarea>
+                                                <textarea class="form-control" rows="7" placeholder="{{trans('admin_content.description')}}" name="{{"short_description_$locale"}}" required>{{$value['short_description']}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.pattern')}}</span>
+                                                <span>{{trans("admin_content.pattern_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.pattern')}}" name="{{"pattern_$locale"}}" value="{{$value['pattern']}}" required>
@@ -87,7 +87,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.material')}}</span>
+                                                <span>{{trans("admin_content.material_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.material')}}" name="{{"material_$locale"}}" value="{{$value['material']}}" required>
@@ -98,7 +98,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.size')}}</span>
+                                                <span>{{trans("admin_content.size_$locale")}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.size')}}" name="{{"size_$locale"}}" value="{{$value['size']}}" required>
@@ -134,6 +134,7 @@
                                                 <input type="color" class="form-control" placeholder="{{trans('admin_content.colors')}}" name="colors" value="{{$product->colors}}">
                                             </div>
                                         </div>
+                                    </div>
 
                                         <div class="form-group  col-md-6">
                                             <label>{{trans('admin_content.status')}}</label>
@@ -147,6 +148,7 @@
                                             </div>
                                         </div>
 
+                                    <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
                                                 <span>{{trans('admin_content.quantity')}}</span>
@@ -185,7 +187,7 @@
                                                 <span>{{trans('admin_content.image')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="thumbnail">
+                                                <input type="file" class="form-control" name="thumbnail" accept=".gif, .jpg, .png, .webp">
                                                 <div class="invalid-feedback">
                                                     {{trans('admin_content.please_upload_image')}}
                                                 </div>

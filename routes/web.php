@@ -47,9 +47,17 @@ Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
 
     //Users Dashboard
     Route::resource('users', 'Admin\UserController');
+    Route::get('ban-user/{id}', 'Admin\UserController@setStatus')->name('setStatus');
 
     //Packages Dashboard
     Route::resource('packages', 'Admin\PackageController');
+
+    Route::get('logout', function () {
+        auth()->logout();
+        return redirect()->back();
+    })->name('logout');
+
+
 });
 
 Route::get('change_locale/{locale}', 'IndexController@change_locale')->name('change_locale');

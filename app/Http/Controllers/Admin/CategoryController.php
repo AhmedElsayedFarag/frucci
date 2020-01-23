@@ -51,6 +51,7 @@ class CategoryController extends Controller
         }
         $category->parent_id = $request->parent_id;
         $category->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('categories.index'));
     }
 
@@ -99,7 +100,10 @@ class CategoryController extends Controller
             $category->image = $picture_name;
         }
         $category->parent_id = $request->parent_id;
-        $category->save();
+        //$category->save();
+        if($category->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('categories.index'));
     }
 

@@ -45,7 +45,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name')); ?></span>
+                                                <span><?php echo e(trans("admin_content.name_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="<?php echo e("name_$locale"); ?>" value="<?php echo e($value['name']); ?>" required>
@@ -56,10 +56,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.description')); ?></span>
+                                                <span><?php echo e(trans("admin_content.description_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("description_$locale"); ?>" required><?php echo e($value['description']); ?></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("description_$locale"); ?>" required><?php echo e($value['description']); ?></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -67,10 +67,10 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.short_description')); ?></span>
+                                                <span><?php echo e(trans("admin_content.short_description_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("short_description_$locale"); ?>" required><?php echo e($value['short_description']); ?></textarea>
+                                                <textarea class="form-control" rows="7" placeholder="<?php echo e(trans('admin_content.description')); ?>" name="<?php echo e("short_description_$locale"); ?>" required><?php echo e($value['short_description']); ?></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.pattern')); ?></span>
+                                                <span><?php echo e(trans("admin_content.pattern_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.pattern')); ?>" name="<?php echo e("pattern_$locale"); ?>" value="<?php echo e($value['pattern']); ?>" required>
@@ -89,7 +89,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.material')); ?></span>
+                                                <span><?php echo e(trans("admin_content.material_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.material')); ?>" name="<?php echo e("material_$locale"); ?>" value="<?php echo e($value['material']); ?>" required>
@@ -100,7 +100,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.size')); ?></span>
+                                                <span><?php echo e(trans("admin_content.size_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.size')); ?>" name="<?php echo e("size_$locale"); ?>" value="<?php echo e($value['size']); ?>" required>
@@ -136,6 +136,7 @@
                                                 <input type="color" class="form-control" placeholder="<?php echo e(trans('admin_content.colors')); ?>" name="colors" value="<?php echo e($product->colors); ?>">
                                             </div>
                                         </div>
+                                    </div>
 
                                         <div class="form-group  col-md-6">
                                             <label><?php echo e(trans('admin_content.status')); ?></label>
@@ -150,6 +151,7 @@
                                             </div>
                                         </div>
 
+                                    <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
                                                 <span><?php echo e(trans('admin_content.quantity')); ?></span>
@@ -189,7 +191,7 @@
                                                 <span><?php echo e(trans('admin_content.image')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="file" class="form-control" name="thumbnail">
+                                                <input type="file" class="form-control" name="thumbnail" accept=".gif, .jpg, .png, .webp">
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_upload_image')); ?>
 

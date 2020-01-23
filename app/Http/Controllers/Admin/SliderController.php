@@ -53,10 +53,8 @@ class SliderController extends Controller
             $slider->image = $picture_name;
         }//end if
         $slider->link = $request->link;
-//        $originalImage = $request->file('image');$thumbnailImage = Image::make($originalImage);
-//        $thumbnailPath = public_path().'/uploads/sliders/';
-//        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
         $slider->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('sliders.index'));
     }
 
@@ -99,7 +97,16 @@ class SliderController extends Controller
             $slider->translateOrNew($locale)->head = $request['head_'.$locale];
             $slider->translateOrNew($locale)->link_title = $request['link_title_'.$locale];
         }//end for each
-        $slider->save();
+        if ($request->hasFile('image')) {
+            $picture_name = 'uploads/'.time().str_shuffle('abcdef').'.'.$request->file('image')->getClientOriginalExtension();
+            Image::make($request->file('image'))->save(public_path("$picture_name"));
+            $slider->image = $picture_name;
+        }//end if
+        $slider->link = $request->link;
+        //$slider->save();
+        if($slider->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('sliders.index'));
     }
 

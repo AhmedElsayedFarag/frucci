@@ -37,7 +37,7 @@
                     <div class="card-body">
                         <?php echo $__env->make('alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <form class="form form-horizontal needs-validation" method="post" action="<?php echo e(route('questions.update', $question->id)); ?>">
-                            <?php echo e(method_field('PATCH')); ?> <?php echo e(csrf_token()); ?>
+                            <?php echo e(method_field('PATCH')); ?> <?php echo e(csrf_field()); ?>
 
                             <?php echo csrf_field(); ?>
                             <div class="form-body">
@@ -46,10 +46,10 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-md-2">
-                                                    <span><?php echo e(trans("admin_content.question")); ?></span>
+                                                    <span><?php echo e(trans("admin_content.question_$locale")); ?></span>
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.question')); ?>" name="<?php echo e("question_$locale"); ?>" required><?php echo e($value['question']); ?></textarea>
+                                                    <textarea class="form-control" rows="7" placeholder="<?php echo e(trans('admin_content.question')); ?>" name="<?php echo e("question_$locale"); ?>" required><?php echo e($value['question']); ?></textarea>
                                                     <div class="invalid-feedback">
                                                         <?php echo e(trans('admin_content.please_enter_question')); ?>
 
@@ -60,12 +60,12 @@
                                         <div class="col-12">
                                             <div class="form-group row">
                                                 <div class="col-md-2">
-                                                    <span><?php echo e(trans("admin_content.answer")); ?></span>
+                                                    <span><?php echo e(trans("admin_content.answer_$locale")); ?></span>
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.answer')); ?>" name="<?php echo e("answer_$locale"); ?>" required><?php echo e($value['answer']); ?></textarea>
+                                                    <textarea class="form-control" rows="7" placeholder="<?php echo e(trans('admin_content.answer')); ?>" name="<?php echo e("answer_$locale"); ?>" required><?php echo e($value['answer']); ?></textarea>
                                                     <div class="invalid-feedback">
-                                                        <?php echo e(trans('admin_content.please_enter_question')); ?>
+                                                        <?php echo e(trans('admin_content.please_enter_answer')); ?>
 
                                                     </div>
                                                 </div>

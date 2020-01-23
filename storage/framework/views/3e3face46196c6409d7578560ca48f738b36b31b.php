@@ -43,7 +43,6 @@
                                     <th><?php echo e(trans('admin_content.address')); ?></th>
                                     <th><?php echo e(trans('admin_content.lat')); ?></th>
                                     <th><?php echo e(trans('admin_content.long')); ?></th>
-                                    <th><?php echo e(trans('admin_content.working_times')); ?></th>
                                     <th><?php echo e(trans('admin_content.city')); ?></th>
                                     <th><?php echo e(trans('admin_content.taken_action')); ?></th>
                                 </tr>
@@ -57,7 +56,6 @@
                                         <td><?php echo e($store->address); ?></td>
                                         <td><?php echo e($store->lat); ?></td>
                                         <td><?php echo e($store->long); ?></td>
-                                        <td><?php echo e($store->working_times); ?></td>
                                         <td><?php echo e($store->city->name); ?></td>
                                         <td>
                                             <a href="<?php echo e(route('stores.edit', $store->id)); ?>"><i class="fa fa-edit"></i></a>

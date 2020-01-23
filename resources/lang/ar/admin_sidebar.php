@@ -8,7 +8,7 @@ return [
         'countries_cities'   => 'الدول/المدن',
         'categories'   => 'الأقسام',
         'products'   => 'المنتجات',
-        'stores' => 'المنصات',
+        'stores' => 'الفروع',
         'users' => 'العملاء',
         'packages' => 'حزم المنتجات',
 

@@ -51,10 +51,8 @@ class BrandController extends Controller
             Image::make($request->file('image'))->save(public_path("$picture_name"));
             $brand->image = $picture_name;
         }//end if
-//        $originalImage = $request->file('image');$thumbnailImage = Image::make($originalImage);
-//        $thumbnailPath = public_path().'/uploads/sliders/';
-//        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
         $brand->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('brands.index'));
     }
 
@@ -102,10 +100,10 @@ class BrandController extends Controller
             Image::make($request->file('image'))->save(public_path("$picture_name"));
             $brand->image = $picture_name;
         }//end if
-//        $originalImage = $request->file('image');$thumbnailImage = Image::make($originalImage);
-//        $thumbnailPath = public_path().'/uploads/sliders/';
-//        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
-        $brand->save();
+        //$brand->save();
+        if($brand->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('brands.index'));
     }
 

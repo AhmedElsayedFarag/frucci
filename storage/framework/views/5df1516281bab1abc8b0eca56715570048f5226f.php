@@ -9,6 +9,7 @@
 <?php $__env->startSection('content'); ?>
 
     <!--start div-->
+
     <div class="row" style="display:block">
 
 
@@ -53,14 +54,19 @@
                                         <td><?php echo e($user->name); ?></td>
                                         <td><?php echo e($user->email); ?></td>
                                         <td><?php echo e($user->phone); ?></td>
-                                        <td><?php echo e($user->is_active == 1 ? trans('admin_content.active') : trans('admin_content.inactive')); ?></td>
-                                        <td><img src="<?php echo e(asset($user->image ? asset($user->image) : 'default.jpg')); ?>" alt="user" style="width:200px; height:100px"></td>
+                                        <td><?php echo e($user->is_active == 1 ? trans('admin_content.active') : trans('admin_content.banned')); ?></td>
+                                        <td><img src="<?php echo e(asset($user->image ? asset($user->image) : 'avatar.png')); ?>" alt="user" style="width:200px; height:100px"></td>
+                                        <?php if(auth()->id()): ?>
+                                        <td>
+                                            <a <?php if($user-> is_active == 0 ): ?> title="unban" <?php else: ?> title="ban" <?php endif; ?> onclick="return true;" id="confirm-color" object_id='<?php echo e($user->id); ?>' object_status='<?php echo e($user->is_active); ?>'  class="ban-unlock">
+                                                <?php if($user->is_active == 1): ?><i class="fa fa-ban"></i> <?php else: ?> <i class="fa fa-unlock"></i><?php endif; ?> </a>
+                                        </td>
+                                        <?php endif; ?>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -80,6 +86,96 @@
 
 
 <?php $__env->startSection('scripts'); ?>
+    <script>
+
+
+        $(document).on('click', '.ban-unlock', function (e) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'swal2-confirm',
+                    cancelButton: 'swal2-cancel'
+                },
+                buttonsStyling: true
+            });
+            swalWithBootstrapButtons.fire({
+                title: '<?php echo e(trans('sweet_alert.title')); ?>',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '<?php echo e(trans('sweet_alert.yes')); ?>',
+                cancelButtonText: '<?php echo e(trans('sweet_alert.no')); ?>',
+            }).then((result) => {
+                if (result.value) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    })
+                    var id = $(this).attr('object_id');
+                    var status = $(this).attr('object_status');
+                        token = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        type: 'post',
+                        url: 'ban-user/'+id,
+                        data: {
+                            _method:'get',
+                            _token: token
+                        } ,
+                        dataType: 'json',
+                        success: function(response) {
+
+                            if (response === 'ban') {
+                                Swal.fire({
+                                    type: 'success',
+                                    title: '<?php echo e(trans('sweet_alert.banned')); ?>',
+                                    showConfirmButton: false,
+                                    timer: 1500
+
+
+
+                                })
+                                window.location.reload();
+
+                            } else if (response === 'unban') {
+                                Swal.fire({
+                                    type: 'success',
+                                    title: '<?php echo e(trans('sweet_alert.unbanned')); ?>',
+                                    showConfirmButton: false,
+                                    timer: 1500
+
+
+                                })
+                                window.location.reload();
+
+
+
+
+
+
+
+
+
+                            }
+
+
+                        }
+                    });
+                } else if (
+                    // / Read more about handling dismissals below /
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire({
+                        title: '<?php echo e(trans('sweet_alert.cancelled')); ?>',
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+
+                }
+            })
+        });
+
+
+
+    </script>
 
 <?php $__env->stopSection(); ?>
 

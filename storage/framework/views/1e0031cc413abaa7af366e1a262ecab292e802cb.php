@@ -33,6 +33,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <div class="table-responsive">
+
                             <a href="<?php echo e(route('brands.create')); ?>" class="btn btn-primary btn-block my-2 waves-effect waves-light"><?php echo e(trans('admin_content.add_brand')); ?> </a>
                             <table class="table table-bordered mb-0">
                                 <thead>
@@ -49,8 +50,8 @@
                                     <tr align="center">
                                         <td><?php echo e($loop->iteration); ?></td>
                                         <td><?php echo e($brand->name); ?></td>
-                                        <td><?php echo e($brand->description); ?></td>
-                                        <td><img src="<?php echo e(asset($brand->image)); ?>" alt="ad" style="width:200px; height:100px"></td>
+                                        <td><?php echo e(substr($brand->description,0,50)); ?></td>
+                                        <td><img src="<?php echo e(asset($brand->image)); ?>" alt="brand" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="<?php echo e(route('brands.edit', $brand->id)); ?>"><i class="fa fa-edit"></i></a>
 
@@ -82,6 +83,7 @@
 
 
 <?php $__env->startSection('scripts'); ?>
+
 
 <?php $__env->stopSection(); ?>
 

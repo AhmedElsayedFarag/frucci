@@ -44,7 +44,6 @@
                                     <th>{{trans('admin_content.address')}}</th>
                                     <th>{{trans('admin_content.lat')}}</th>
                                     <th>{{trans('admin_content.long')}}</th>
-                                    <th>{{trans('admin_content.working_times')}}</th>
                                     <th>{{trans('admin_content.city')}}</th>
                                     <th>{{trans('admin_content.taken_action')}}</th>
                                 </tr>
@@ -58,7 +57,6 @@
                                         <td>{{$store->address}}</td>
                                         <td>{{$store->lat}}</td>
                                         <td>{{$store->long}}</td>
-                                        <td>{{$store->working_times}}</td>
                                         <td>{{$store->city->name}}</td>
                                         <td>
                                             <a href="{{route('stores.edit', $store->id)}}"><i class="fa fa-edit"></i></a>

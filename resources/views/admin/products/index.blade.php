@@ -40,19 +40,11 @@
                                 <tr align="center">
                                     <th>#</th>
                                     <th>{{trans('admin_content.name')}}</th>
-                                    <th>{{trans('admin_content.description')}}</th>
-                                    <th>{{trans('admin_content.short_description')}}</th>
-                                    <th>{{trans('admin_content.pattern')}}</th>
-                                    <th>{{trans('admin_content.material')}}</th>
-                                    <th>{{trans('admin_content.size')}}</th>
                                     <th>{{trans('admin_content.price_before')}}</th>
                                     <th>{{trans('admin_content.price_after')}}</th>
-                                    <th>{{trans('admin_content.colors')}}</th>
-                                    <th>{{trans('admin_content.status')}}</th>
                                     <th>{{trans('admin_content.quantity')}}</th>
                                     <th>{{trans('admin_content.serial_number')}}</th>
-                                    <th>{{trans('admin_content.brand')}}</th>
-                                    <th>{{trans('admin_content.image')}}</th>
+                                    <th>{{trans('admin_content.thumbnail')}}</th>
                                     <th>{{trans('admin_content.taken_action')}}</th>
                                 </tr>
                                 </thead>
@@ -61,18 +53,10 @@
                                     <tr align="center">
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$product->name}}</td>
-                                        <td>{{$product->description}}</td>
-                                        <td>{{$product->short_description}}</td>
-                                        <td>{{$product->pattern}}</td>
-                                        <td>{{$product->material}}</td>
-                                        <td>{{$product->size}}</td>
                                         <td>{{$product->price_before}}</td>
                                         <td>{{$product->price_after}}</td>
-                                        <td>{{$product->colors}}</td>
-                                        <td>{{($product->status) == 0 ? trans('admin_content.not_available') : trans('admin_content.available')}}</td>
                                         <td>{{$product->quantity}}</td>
                                         <td>{{$product->serial_number}}</td>
-                                        <td>{{$product->brand->name}}</td>
                                         <td><img src="{{asset($product->thumbnail)}}" alt="ad" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="{{route('products.edit', $product->id)}}"><i class="fa fa-edit"></i></a>

@@ -43,42 +43,12 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name_ar')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="name_ar" required>
-                                                <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_enter_name')); ?>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
                                                 <span><?php echo e(trans('admin_content.name_en')); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="name_en" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_enter_name')); ?>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.address_ar')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.address')); ?>" name="address_ar" required>
-                                                <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_enter_address')); ?>
 
                                                 </div>
                                             </div>
@@ -100,31 +70,60 @@
                                         </div>
                                     </div>
 
+                                <div class="col-12">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <span><?php echo e(trans('admin_content.working_times_en')); ?></span>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <textarea  class="form-control myTextArea" rows="7" placeholder="<?php echo e(trans('admin_content.working_times')); ?>" name="working_times_en"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.working_times_in_arabic')); ?></span>
+                                                <span><?php echo e(trans('admin_content.name_ar')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.working_times')); ?>" name="working_times_ar" required></textarea>
+                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.name')); ?>" name="name_ar" required>
                                                 <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_enter_working_times')); ?>
+                                                    <?php echo e(trans('admin_content.please_enter_name')); ?>
 
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.working_times_in_english')); ?></span>
+                                                <span><?php echo e(trans('admin_content.address_ar')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="<?php echo e(trans('admin_content.working_times')); ?>" name="working_times_en" required></textarea>
+                                                <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.address')); ?>" name="address_ar" required>
                                                 <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_enter_working_times')); ?>
+                                                    <?php echo e(trans('admin_content.please_enter_address')); ?>
 
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span><?php echo e(trans('admin_content.working_times_ar')); ?></span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea  class="form-control myTextArea" rows="7" placeholder="<?php echo e(trans('admin_content.working_times')); ?>" name="working_times_ar"></textarea>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="col-12">
@@ -133,7 +132,7 @@
                                                 <span><?php echo e(trans('admin_content.phone')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.phone')); ?>" name="phone">
+                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.phone')); ?>" minlength="10" maxlength="14" name="phone">
                                             </div>
                                         </div>
                                     </div>
@@ -141,24 +140,17 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.lat')); ?></span>
+                                                <span><?php echo e(trans('admin_content.location')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="number" class="form-control" placeholder="<?php echo e(trans('admin_content.lat')); ?>" name="lat">
+                                                <div id="map" style="height: 350px;"></div>
+                                                <input type="hidden" name="lat" id="lat">
+                                                <input type="hidden" name="long" id="lng">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.long')); ?></span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="number" class="form-control" placeholder="<?php echo e(trans('admin_content.long')); ?>" name="long">
-                                            </div>
-                                        </div>
-                                    </div>
+
 
                                     <div class="form-group  col-md-6">
                                         <label><?php echo e(trans('admin_content.city')); ?></label>
@@ -188,5 +180,32 @@
     </div>
 
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    <script>
+        var map = L.map('map').setView([24.774265, 46.738586], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([24.774265, 46.738586],{
+            draggable: true
+
+        }).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+
+        marker.on('dragend', function (e) {
+            var lat = marker.getLatLng().lat;
+            var lng = marker.getLatLng().lng;
+            $('#lat').val(lat);
+            $('#lng').val(lng);
+            console.log(lat);
+            console.log(lng);
+        });
+
+    </script>
+<?php $__env->stopSection(); ?>
+
 
 <?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\frucci\resources\views/admin/stores/create.blade.php ENDPATH**/ ?>

@@ -42,40 +42,12 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.name_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.name')}}" name="name_ar" required>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_name')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
                                                 <span>{{trans('admin_content.name_en')}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="{{trans('admin_content.name')}}" name="name_en" required>
                                                 <div class="invalid-feedback">
                                                     {{trans('admin_content.please_enter_name')}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.address_ar')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.address')}}" name="address_ar" required>
-                                                <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_address')}}
                                                 </div>
                                             </div>
                                         </div>
@@ -95,29 +67,58 @@
                                         </div>
                                     </div>
 
+                                <div class="col-12">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <span>{{trans('admin_content.working_times_en')}}</span>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <textarea  class="form-control myTextArea" rows="7" placeholder="{{trans('admin_content.working_times')}}" name="working_times_en"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.working_times_in_arabic')}}</span>
+                                                <span>{{trans('admin_content.name_ar')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.working_times')}}" name="working_times_ar" required></textarea>
+                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.name')}}" name="name_ar" required>
                                                 <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_working_times')}}
+                                                    {{trans('admin_content.please_enter_name')}}
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.working_times_in_english')}}</span>
+                                                <span>{{trans('admin_content.address_ar')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="{{trans('admin_content.working_times')}}" name="working_times_en" required></textarea>
+                                                <input type="text" class="form-control" placeholder="{{trans('admin_content.address')}}" name="address_ar" required>
                                                 <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_enter_working_times')}}
+                                                    {{trans('admin_content.please_enter_address')}}
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span>{{trans('admin_content.working_times_ar')}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <textarea  class="form-control myTextArea" rows="7" placeholder="{{trans('admin_content.working_times')}}" name="working_times_ar"></textarea>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="col-12">
@@ -126,7 +127,7 @@
                                                 <span>{{trans('admin_content.phone')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="tel" class="form-control" placeholder="{{trans('admin_content.phone')}}" name="phone">
+                                                <input type="tel" class="form-control" placeholder="{{trans('admin_content.phone')}}" minlength="10" maxlength="14" name="phone">
                                             </div>
                                         </div>
                                     </div>
@@ -134,24 +135,17 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.lat')}}</span>
+                                                <span>{{trans('admin_content.location')}}</span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="number" class="form-control" placeholder="{{trans('admin_content.lat')}}" name="lat">
+                                                <div id="map" style="height: 350px;"></div>
+                                                <input type="hidden" name="lat" id="lat">
+                                                <input type="hidden" name="long" id="lng">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group row">
-                                            <div class="col-md-2">
-                                                <span>{{trans('admin_content.long')}}</span>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <input type="number" class="form-control" placeholder="{{trans('admin_content.long')}}" name="long">
-                                            </div>
-                                        </div>
-                                    </div>
+
 
                                     <div class="form-group  col-md-6">
                                         <label>{{trans('admin_content.city')}}</label>
@@ -180,3 +174,30 @@
     </div>
 
 @endsection
+@section('scripts')
+    <script>
+        var map = L.map('map').setView([24.774265, 46.738586], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([24.774265, 46.738586],{
+            draggable: true
+
+        }).addTo(map)
+            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .openPopup();
+
+        marker.on('dragend', function (e) {
+            var lat = marker.getLatLng().lat;
+            var lng = marker.getLatLng().lng;
+            $('#lat').val(lat);
+            $('#lng').val(lng);
+            console.log(lat);
+            console.log(lng);
+        });
+
+    </script>
+@endsection
+

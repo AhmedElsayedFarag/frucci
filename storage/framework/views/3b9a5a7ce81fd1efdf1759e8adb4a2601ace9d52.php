@@ -39,19 +39,11 @@
                                 <tr align="center">
                                     <th>#</th>
                                     <th><?php echo e(trans('admin_content.name')); ?></th>
-                                    <th><?php echo e(trans('admin_content.description')); ?></th>
-                                    <th><?php echo e(trans('admin_content.short_description')); ?></th>
-                                    <th><?php echo e(trans('admin_content.pattern')); ?></th>
-                                    <th><?php echo e(trans('admin_content.material')); ?></th>
-                                    <th><?php echo e(trans('admin_content.size')); ?></th>
                                     <th><?php echo e(trans('admin_content.price_before')); ?></th>
                                     <th><?php echo e(trans('admin_content.price_after')); ?></th>
-                                    <th><?php echo e(trans('admin_content.colors')); ?></th>
-                                    <th><?php echo e(trans('admin_content.status')); ?></th>
                                     <th><?php echo e(trans('admin_content.quantity')); ?></th>
                                     <th><?php echo e(trans('admin_content.serial_number')); ?></th>
-                                    <th><?php echo e(trans('admin_content.brand')); ?></th>
-                                    <th><?php echo e(trans('admin_content.image')); ?></th>
+                                    <th><?php echo e(trans('admin_content.thumbnail')); ?></th>
                                     <th><?php echo e(trans('admin_content.taken_action')); ?></th>
                                 </tr>
                                 </thead>
@@ -60,18 +52,10 @@
                                     <tr align="center">
                                         <td><?php echo e($loop->iteration); ?></td>
                                         <td><?php echo e($product->name); ?></td>
-                                        <td><?php echo e($product->description); ?></td>
-                                        <td><?php echo e($product->short_description); ?></td>
-                                        <td><?php echo e($product->pattern); ?></td>
-                                        <td><?php echo e($product->material); ?></td>
-                                        <td><?php echo e($product->size); ?></td>
                                         <td><?php echo e($product->price_before); ?></td>
                                         <td><?php echo e($product->price_after); ?></td>
-                                        <td><?php echo e($product->colors); ?></td>
-                                        <td><?php echo e(($product->status) == 0 ? trans('admin_content.not_available') : trans('admin_content.available')); ?></td>
                                         <td><?php echo e($product->quantity); ?></td>
                                         <td><?php echo e($product->serial_number); ?></td>
-                                        <td><?php echo e($product->brand->name); ?></td>
                                         <td><img src="<?php echo e(asset($product->thumbnail)); ?>" alt="ad" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="<?php echo e(route('products.edit', $product->id)); ?>"><i class="fa fa-edit"></i></a>

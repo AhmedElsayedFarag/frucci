@@ -41,11 +41,21 @@
 
                             <div class="form-body">
                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span><?php echo e(trans('admin_content.link')); ?></span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input type="url" class="form-control" placeholder="<?php echo e(trans('admin_content.link')); ?>" name="link" value="<?php echo e($slider->link); ?>">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <?php $__currentLoopData = $slider->getTranslationsArray(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $locale =>$value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.head')); ?></span>
+                                                <span><?php echo e(trans("admin_content.head_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.head')); ?>" name="<?php echo e("head_$locale"); ?>" value="<?php echo e($value['head']); ?>">
@@ -53,43 +63,28 @@
                                         </div>
                                     </div>
 
-
-
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.link_title')); ?></span>
+                                                <span><?php echo e(trans("admin_content.link_title_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" placeholder="<?php echo e(trans('admin_content.link_title')); ?>" name="<?php echo e("link_title_$locale"); ?>" value="<?php echo e($value['link_title']); ?>">
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                        <div class="col-12">
-                                            <div class="form-group row">
-                                                <div class="col-md-2">
-                                                    <span><?php echo e(trans('admin_content.link')); ?></span>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <input type="url" class="form-control" placeholder="<?php echo e(trans('admin_content.link')); ?>" name="link" value="<?php echo e($slider->link); ?>">
-                                                </div>
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span><?php echo e(trans('admin_content.image')); ?></span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp">
                                             </div>
                                         </div>
-
-                                        <div class="col-12">
-                                            <div class="form-group row">
-                                                <div class="col-md-2">
-                                                    <span><?php echo e(trans('admin_content.image')); ?></span>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <input type="file" class="form-control" name="image">
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
 
                                     <div class="col-12 text-center">
                                         <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light"><?php echo e(trans('admin_content.edit')); ?></button>

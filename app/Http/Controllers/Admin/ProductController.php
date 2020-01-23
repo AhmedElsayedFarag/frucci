@@ -64,6 +64,7 @@ class ProductController extends Controller
         $product->serial_number = $request->serial_number;
         $product->brand_id = $request->brand_id;
         $product->save();
+        session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('products.index'));
     }
 
@@ -123,7 +124,10 @@ class ProductController extends Controller
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
         $product->brand_id = $request->brand_id;
-        $product->save();
+        //$product->save();
+        if($product->save()) {
+            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        }
         return redirect(route('products.index'));
     }
 

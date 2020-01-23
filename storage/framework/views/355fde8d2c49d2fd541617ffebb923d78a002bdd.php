@@ -50,9 +50,9 @@
                                     <tr align="center">
                                         <td><?php echo e($loop->iteration); ?></td>
                                         <td><?php echo e($subCategory->name); ?></td>
-                                        <td><img src="<?php echo e(asset($subCategory->image)); ?>" alt="ad" style="width:200px; height:100px"></td>
+                                        <td><img src="<?php echo e(asset($subCategory->image)); ?>" alt="category" style="width:200px; height:100px"></td>
                                         <td><?php echo e($subCategory->category->name); ?></td>
-                                        <td><img src="<?php echo e(asset($subCategory->category->image)); ?>" alt="ad" style="width:200px; height:100px"></td>
+                                        <td><img src="<?php echo e($subCategory->category->image); ?>" alt="ad" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="<?php echo e(route('categories.edit', $subCategory->id)); ?>"><i class="fa fa-edit"></i></a>
 

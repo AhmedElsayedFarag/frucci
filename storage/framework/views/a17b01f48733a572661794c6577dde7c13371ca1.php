@@ -45,7 +45,7 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.name_ar')); ?></span>
+                                                <span><?php echo e(trans("admin_content.name_$locale")); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input class="form-control" placeholder="<?php echo e(trans('admin_content.country_city')); ?>" name="<?php echo e("name_$locale"); ?>" value="<?php echo e($value['name']); ?>" required>
@@ -68,7 +68,7 @@
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                         <div class="invalid-feedback">
-                                            <?php echo e(trans('admin_content.please_enter_name')); ?>
+                                            <?php echo e(trans('admin_content.please_choose_country')); ?>
 
                                         </div>
                                     </div>

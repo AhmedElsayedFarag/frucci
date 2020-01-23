@@ -12,6 +12,7 @@ class Package extends Model
     protected $fillable = array('image', 'price');
 
     public function products(){
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany('App\Product','package_products');
     }
+
 }
