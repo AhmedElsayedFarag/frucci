@@ -11,5 +11,8 @@ return [
     'stores' => 'Stores',
     'users' => 'Users',
     'packages' => 'Packages',
+    'subscribers' => 'Subscribers',
+    'contacts' => 'Contacts',
+    'coupons' => 'Coupons',
 
 ];

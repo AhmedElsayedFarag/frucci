@@ -15,7 +15,7 @@ return [
     'block_num'            => 'عذرا لقد إستخدمت رقم محظور',
     'active_url'           => 'الحقل :attribute لا يُمثّل رابطًا صحيحًا',
     'after'                => 'يجب على الحقل :attribute أن يكون تاريخًا لاحقًا للتاريخ :date.',
-    'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
+    'after_or_equal'       => 'يجب أن يكون حقل :attribute مساويا أو اكبر من تاريخ اليوم',
     'alpha'                => 'يجب أن لا يحتوي الحقل :attribute سوى على حروف',
     'alpha_dash'           => 'يجب أن لا يحتوي الحقل :attribute على حروف، أرقام ومطّات.',
     'alpha_num'            => 'يجب أن يحتوي :attribute على حروفٍ وأرقامٍ فقط',
@@ -177,6 +177,13 @@ return [
         'brand_id'              => 'الماركة',
         'price'                 => 'السعر',
         'product_ids'           => 'المنتجات',
+        'message'               => 'الرسالة',
+        'coupon'                => 'الكوبون',
+        'type_coupon'           => 'النوع',
+        'expire_date'           => 'تاريخ الانتهاء',
+        'number_of_users'       => 'عدد المستخدمين',
+        'value'                 => 'القيمة',
+        'option'                 => 'اختيار',
 
 
     ],

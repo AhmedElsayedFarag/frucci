@@ -45,6 +45,15 @@
             <li class=" nav-item"><a href="<?php echo e(route('packages.index')); ?>"><i class="fa fa-angellist"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.packages')); ?></span></a>
             </li>
 
+            <li class=" nav-item"><a href="<?php echo e(route('subscribers')); ?>"><i class="fa fa-envelope"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.subscribers')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('contacts.index')); ?>"><i class="fa fa-phone"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.contacts')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('coupons.index')); ?>"><i class="fa fa-battery-full"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.coupons')); ?></span></a>
+            </li>
+
         </ul>
     </div>
 </div>

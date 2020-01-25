@@ -52,6 +52,15 @@ Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
     //Packages Dashboard
     Route::resource('packages', 'Admin\PackageController');
 
+    //Email-Subscribers Dashboard
+    Route::get('subscribers', 'Admin\SubscriberController@index')->name('subscribers');
+
+    //Contacts Dashboard
+    Route::resource('contacts', 'Admin\ContactController');
+
+    //Coupons Dashboard
+    Route::resource('coupons', 'Admin\CouponController');
+
     Route::get('logout', function () {
         auth()->logout();
         return redirect()->back();

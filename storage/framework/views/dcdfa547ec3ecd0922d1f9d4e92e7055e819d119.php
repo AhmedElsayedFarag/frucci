@@ -77,7 +77,7 @@
                                                 <span><?php echo e(trans('admin_content.phone')); ?></span>
                                             </div>
                                             <div class="col-md-10">
-                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.phone')); ?>" name="phone" value="<?php echo e(auth()->user()->phone); ?>" minlength="10" required>
+                                                <input type="tel" class="form-control" placeholder="<?php echo e(trans('admin_content.phone')); ?>" name="phone" value="<?php echo e(auth()->user()->phone); ?>" minlength="10" maxlength="14" required>
                                                 <div class="invalid-feedback">
                                                     <?php echo e(trans('admin_content.please_enter_phone')); ?>
 

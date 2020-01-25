@@ -20,6 +20,9 @@ class CreateCouponsTable extends Migration
             $table->string('value');
             $table->string('expire_date')->nullable();
             $table->string('number_of_users')->nullable();
+            $table->string('option');
+            $table->bigInteger('brand_id')->unsigned()->nullable();
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->timestamps();
         });
     }

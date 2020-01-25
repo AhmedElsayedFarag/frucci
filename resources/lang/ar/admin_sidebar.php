@@ -11,5 +11,8 @@ return [
         'stores' => 'الفروع',
         'users' => 'العملاء',
         'packages' => 'حزم المنتجات',
+        'subscribers' => 'المشتركين',
+        'contacts' => 'الاتصالات',
+        'coupons' => 'الكوبونات',
 
 ];

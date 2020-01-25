@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageSubTitle')
-    {{trans('admin_content.countries_cities')}}
+    {{trans('admin_content.add_country_city')}}
 @endsection
 
 @section('content')

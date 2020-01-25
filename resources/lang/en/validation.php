@@ -181,7 +181,16 @@ return [
         'password_confirmation'    => 'password confirmation',
         'phone'                    => 'phone',
         'price'                    => 'price',
-        'product_idس'              => 'products',
+        'product_id'              => 'products',
+        'message'                  => 'message',
+        'coupon'                   => 'coupon',
+        'type_coupon'              => 'type',
+        'expire_date'              => 'expiry date',
+        'number_of_users'          => 'number of users',
+        'value'                    => 'value',
+        'state'                 => 'state',
+        'option'                 => 'option',
+
     ],
 
 ];
