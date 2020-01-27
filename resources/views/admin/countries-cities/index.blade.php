@@ -66,10 +66,55 @@
 {{--            </div>--}}
 {{--        </div>--}}
 
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">الدول</h4>
+                </div>
+                <div class="card-content" >
+                    <div class="card-body card-dashboard" >
+                        <div class="table-responsive" style="overflow: hidden">
+                            <table class="table zero-configuration">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{{trans('admin_content.country')}}</th>
+                                    <th>{{trans('admin_content.taken_action')}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($countries as $city)
+                                    <tr align="center">
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$city->name}}</td>
+                                        <td>
+                                            <a href="{{route('countries-cities.edit', $city->id)}}"><i class="fa fa-edit"></i></a>
+
+                                            {{--<a title="delete" onclick="return true;" class="remove-alert" id="confirm-color" object_id="{{ $city->id }}" delete_url="/countries-cities/" href="#">--}}
+                                            {{--<i class="fa fa-times"></i> </a>--}}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{{trans('admin_content.country')}}</th>
+                                    <th>{{trans('admin_content.taken_action')}}</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="col-12">
             <div class="card">
-
+                <div class="card-header">
+                    <h4 class="card-title">المدن</h4>
+                </div>
                 <div class="card-content" >
                     <div class="card-body card-dashboard" >
                         <div class="table-responsive" style="overflow: hidden">

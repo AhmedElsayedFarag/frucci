@@ -42,7 +42,7 @@ class CategoryRequest extends FormRequest
                     'image' => 'image',
                     'name_en' => 'required',
                     'name_ar' => 'required',
-                    'parent_id' => 'required',
+//                    'parent_id' => 'required',
                 ];
 
         }

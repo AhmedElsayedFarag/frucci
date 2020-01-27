@@ -65,10 +65,55 @@
 
 
 
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">الدول</h4>
+                </div>
+                <div class="card-content" >
+                    <div class="card-body card-dashboard" >
+                        <div class="table-responsive" style="overflow: hidden">
+                            <table class="table zero-configuration">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th><?php echo e(trans('admin_content.country')); ?></th>
+                                    <th><?php echo e(trans('admin_content.taken_action')); ?></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php $__currentLoopData = $countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $city): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr align="center">
+                                        <td><?php echo e($loop->iteration); ?></td>
+                                        <td><?php echo e($city->name); ?></td>
+                                        <td>
+                                            <a href="<?php echo e(route('countries-cities.edit', $city->id)); ?>"><i class="fa fa-edit"></i></a>
+
+                                            
+                                            
+                                        </td>
+                                    </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th><?php echo e(trans('admin_content.country')); ?></th>
+                                    <th><?php echo e(trans('admin_content.taken_action')); ?></th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="col-12">
             <div class="card">
-
+                <div class="card-header">
+                    <h4 class="card-title">المدن</h4>
+                </div>
                 <div class="card-content" >
                     <div class="card-body card-dashboard" >
                         <div class="table-responsive" style="overflow: hidden">

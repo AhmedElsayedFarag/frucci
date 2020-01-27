@@ -23,10 +23,29 @@ class CountryCityRequest extends FormRequest
      */
     public function rules()
     {
+
+        switch ($this->method()){
+            case 'GET':
+            case 'DELETE':
+                return [];
+
+            case 'POST':
         return [
             'name_ar' => 'required',
             'name_en' => 'required',
             'parent_id' => 'required',
         ];
+
+            case 'PUT':
+            case 'PATCH':
+        return [
+            'name_ar' => 'required',
+            'name_en' => 'required',
+//            'parent_id' => 'required',
+        ];
+
+        }
+
+
     }
 }

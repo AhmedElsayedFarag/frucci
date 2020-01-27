@@ -17,7 +17,11 @@ class CountryCityController extends Controller
     public function index()
     {
         $cities = City::where('parent_id', '!=', 0)->get();
-        return view('admin.countries-cities.index', compact('cities'));
+        $countries = City::where('parent_id', 0)->get();
+        return view('admin.countries-cities.index', [
+            'cities' =>$cities,
+            'countries'=>$countries,
+        ]);
     }
 
     /**
@@ -89,7 +93,9 @@ class CountryCityController extends Controller
         foreach ($available_locales as $locale => $value){
             $countryCity->translateOrNew($locale)->name = $request['name_'.$locale];
         }//end for each
-        $countryCity->parent_id = $request->parent_id;
+        if ($request->parent_id){
+            $countryCity->parent_id = $request->parent_id;
+        }
         //$countryCity->save();
         if($countryCity->save()) {
             session()->flash('message', trans('sweet_alert.updated_successfully'));

@@ -57,7 +57,7 @@
 
                                     <div class="form-group  col-md-6">
                                         <label>{{trans('admin_content.country')}}</label>
-                                        <select class="form-control" name ="parent_id" required>
+                                        <select class="form-control" name ="parent_id" >
                                             <option value="" selected disabled>{{trans('admin_content.choose_one')}}</option>
                                             <option value="0">{{trans('admin_content.without_country')}}</option>
                                             @foreach($countries as $country)
