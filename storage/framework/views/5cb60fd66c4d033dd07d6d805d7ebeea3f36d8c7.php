@@ -6,7 +6,7 @@
                     <div class="brand-logo"></div>
                     <h2 class="brand-text mb-0">Vuexy</h2>
                 </a></li>
-            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i></a></li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
@@ -21,12 +21,37 @@
                 </ul>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('questions.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.questions')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('questions.index')); ?>"><i class="fa fa-question"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.questions')); ?></span></a>
             </li>
 
-            <li class=" nav-item"><a href="<?php echo e(route('sliders.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.sliders')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('sliders.index')); ?>"><i class="fa fa-arrows"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.sliders')); ?></span></a>
 
-            <li class=" nav-item"><a href="<?php echo e(route('countries.index')); ?>"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.countries')); ?></span></a>
+            <li class=" nav-item"><a href="<?php echo e(route('brands.index')); ?>"><i class="fa fa-shirtsinbulk"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.brands')); ?></span></a>
+
+            <li class=" nav-item"><a href="<?php echo e(route('countries-cities.index')); ?>"><i class="fa fa-flag"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.countries_cities')); ?></span></a>
+
+            <li class=" nav-item"><a href="<?php echo e(route('categories.index')); ?>"><i class="fa fa-joomla"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.categories')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('products.index')); ?>"><i class="fa fa-barcode"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.products')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('stores.index')); ?>"><i class="fa fa-life-ring"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.stores')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('users.index')); ?>"><i class="fa fa-user"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.users')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('packages.index')); ?>"><i class="fa fa-angellist"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.packages')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('subscribers')); ?>"><i class="fa fa-envelope"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.subscribers')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('contacts.index')); ?>"><i class="fa fa-phone"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.contacts')); ?></span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo e(route('coupons.index')); ?>"><i class="fa fa-battery-full"></i><span class="menu-title" data-i18n="Email"><?php echo e(trans('admin_sidebar.coupons')); ?></span></a>
             </li>
 
         </ul>
