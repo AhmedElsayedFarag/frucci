@@ -54,6 +54,9 @@
             <li class=" nav-item"><a href="{{route('coupons.index')}}"><i class="fa fa-battery-full"></i><span class="menu-title" data-i18n="Email">{{trans('admin_sidebar.coupons')}}</span></a>
             </li>
 
+            <li class=" nav-item"><a href="{{route('settings')}}"><i class="fa fa-gear"></i><span class="menu-title" data-i18n="Email">{{trans('admin_sidebar.settings')}}</span></a>
+            </li>
+
         </ul>
     </div>
 </div>

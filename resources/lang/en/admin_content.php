@@ -140,6 +140,20 @@ return [
     'option' => 'Option',
     'please_choose_one'   => 'Please, choose one',
     'currency' => 'S.R',
+    'facebook' => 'Facebook',
+    'twitter' => 'Twitter',
+    'youtube' => 'Youtube',
+    'linkedin' => 'Linkedin',
+    'logo_header' => 'Header logo',
+    'logo_footer' => 'Footer logo',
+    'fax' => 'Fax',
+    'location_ar' => 'Location in arabic',
+    'location_en' => 'Location in english',
+    'edit_settings' => 'Edit settings',
+    'ferrucci_location_en' => 'P.O. Box 2341 Al Khobar Saudi Arabia 31952',
+    'ferrucci_location_ar' => 'صندوق بريد 2341 الخبر المملكة العربية السعودية',
+
+
 
 
 

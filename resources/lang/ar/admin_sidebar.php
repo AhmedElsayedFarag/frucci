@@ -14,5 +14,6 @@ return [
         'subscribers' => 'المشتركين',
         'contacts' => 'الاتصالات',
         'coupons' => 'الكوبونات',
+        'settings' => 'الاعدادات',
 
 ];
