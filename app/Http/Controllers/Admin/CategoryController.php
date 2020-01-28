@@ -16,8 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $categories = Category::where('parent_id', 0)->get();
         $subCategories = Category::where('parent_id', '!=', 0)->get();
-        return view('admin.categories.index', compact('subCategories'));
+        return view('admin.categories.index', compact('categories','subCategories'));
     }
 
     /**
@@ -99,8 +100,9 @@ class CategoryController extends Controller
             Image::make($request->file('image'))->save(public_path("$picture_name"));
             $category->image = $picture_name;
         }
-        $category->parent_id = $request->parent_id;
-        //$category->save();
+        if ($request->parent_id||$request->parent_id=="0"){
+            $category->parent_id = $request->parent_id;
+        }
         if($category->save()) {
             session()->flash('message', trans('sweet_alert.updated_successfully'));
         }

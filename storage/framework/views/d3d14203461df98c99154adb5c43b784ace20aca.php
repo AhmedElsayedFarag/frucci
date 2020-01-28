@@ -11,7 +11,7 @@
     <!--start div-->
     <div class="row" style="display:block">
 
-        <a href="<?php echo e(route('countries-cities.create')); ?>" class="btn btn-primary btn-block my-2 waves-effect waves-light"><?php echo e(trans('admin_content.add_country_city')); ?> </a>
+
         <div class="row breadcrumbs-top">
             <div class="col-12">
                 <h2 class="content-header-title float-left mb-0"><?php echo e(trans('admin_content.countries_cities')); ?></h2>
@@ -68,7 +68,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">الدول</h4>
+                    <h4 class="card-title"><?php echo e(trans('admin_content.countries')); ?></h4>
+                                                <a href="<?php echo e(route('countries-cities.create')); ?>" class="btn btn-primary btn-block my-2 waves-effect waves-light"><?php echo e(trans('admin_content.add_country_city')); ?> </a>
+
                 </div>
                 <div class="card-content" >
                     <div class="card-body card-dashboard" >
@@ -112,7 +114,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">المدن</h4>
+                    <h4 class="card-title"><?php echo e(trans('admin_content.cities')); ?></h4>
                 </div>
                 <div class="card-content" >
                     <div class="card-body card-dashboard" >

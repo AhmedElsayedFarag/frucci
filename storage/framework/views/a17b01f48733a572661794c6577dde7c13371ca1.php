@@ -62,7 +62,7 @@
                                         <label><?php echo e(trans('admin_content.country')); ?></label>
                                         <select class="form-control" name ="parent_id" >
                                             <option value="" selected disabled><?php echo e(trans('admin_content.choose_one')); ?></option>
-                                            <option value="0"><?php echo e(trans('admin_content.without_country')); ?></option>
+                                            <option <?php echo e($countryCity->parent_id == 0 ? 'selected' : ''); ?> value="0"><?php echo e(trans('admin_content.without_country')); ?></option>
                                             <?php $__currentLoopData = $countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option <?php echo e($countryCity->parent_id == $country->id ? 'selected' : ''); ?> value="<?php echo e($country->id); ?>"><?php echo e($country->name); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

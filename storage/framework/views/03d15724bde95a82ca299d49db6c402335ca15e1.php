@@ -188,14 +188,41 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span><?php echo e(trans('admin_content.image')); ?></span>
+                                                <span><?php echo e(trans('admin_content.thumbnail')); ?></span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="file" class="form-control" name="thumbnail" accept=".gif, .jpg, .png, .webp">
                                                 <div class="invalid-feedback">
-                                                    <?php echo e(trans('admin_content.please_upload_image')); ?>
+                                                    <?php echo e(trans('admin_content.please_upload_thumbnail')); ?>
 
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span><?php echo e(trans('admin_content.images')); ?></span>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <input multiple type="file" class="form-control" name="images[]" accept=".gif, .jpg, .png, .webp">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group  col-md-6">
+                                            <label><?php echo e(trans('admin_content.categories')); ?></label>
+                                            <select multiple class="form-control" name ="cat_ids[]" required>
+                                                <option value=""  disabled ><?php echo e(trans('admin_content.choose_one_or_many')); ?></option>
+                                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option  value="<?php echo e($category->id); ?>" <?php echo e((in_array($category->id,$product->categories->pluck('id')->toArray())==$category->id)?'selected':''); ?>><?php echo e($category->name); ?></option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?php echo e(trans('admin_content.please_choose_one_or_many_products')); ?>
+
                                             </div>
                                         </div>
                                     </div>

@@ -49,7 +49,7 @@
                                     <tr align="center">
                                         <td><?php echo e($loop->iteration); ?></td>
                                         <td><?php echo e($package->name); ?></td>
-                                        <td><?php echo e($package->price); ?></td>
+                                        <td><?php echo e($package->price . ' ' . trans('admin_content.currency')); ?></td>
                                         <td><img src="<?php echo e(asset($package->image)); ?>" alt="package" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="<?php echo e(route('packages.edit', $package->id)); ?>"><i class="fa fa-edit"></i></a>

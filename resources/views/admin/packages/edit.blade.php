@@ -76,6 +76,8 @@
                                         </div>
                                     </div>
 
+
+
                                     <div class="form-group  col-md-6">
                                         <label>{{trans('admin_content.products')}}</label>
                                         <select multiple class="form-control" name ="product_ids[]" required>

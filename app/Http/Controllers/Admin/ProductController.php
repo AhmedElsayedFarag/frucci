@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Brand;
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use App\ProductCategory;
+use App\ProductImage;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -29,8 +32,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $categories = Category::where('parent_id', '!=', 0)->get();
         $brands = Brand::all();
-        return view('admin.products.create', compact('brands'));
+        return view('admin.products.create', compact('brands', 'categories'));
     }
 
     /**
@@ -64,6 +68,27 @@ class ProductController extends Controller
         $product->serial_number = $request->serial_number;
         $product->brand_id = $request->brand_id;
         $product->save();
+        $images = array();
+        if($files=$request->file('images')){
+            foreach($files as $file){
+                $picture_name = 'uploads/' . time() . str_shuffle('abcdef') . '.' . $file->getClientOriginalExtension();
+                Image::make($file)->save(public_path("$picture_name"));
+                $images[]=$picture_name ;
+            }
+        }
+
+        for ($x=0;$x<count($request->images);$x++){
+            $image = new ProductImage();
+            $image->product_id = $product->id;
+            $image->image = $images[$x];
+            $image->save();
+        }
+        for ($x=0;$x<count($request->cat_ids);$x++){
+            $product_category = new ProductCategory();
+            $product_category->product_id =  $product->id;
+            $product_category->category_id = $request->cat_ids[$x];
+            $product_category->save();
+        }
         session()->flash('message', trans('sweet_alert.added_successfully'));
         return redirect(route('products.index'));
     }
@@ -87,9 +112,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::where('parent_id', '!=', 0)->get();
         $brands = Brand::all();
         $product = Product::findOrFail($id);
-        return view('admin.products.edit', compact('product', 'brands'));
+        return view('admin.products.edit', compact('product', 'brands', 'categories'));
     }
 
     /**
@@ -124,10 +150,39 @@ class ProductController extends Controller
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
         $product->brand_id = $request->brand_id;
-        //$product->save();
-        if($product->save()) {
-            session()->flash('message', trans('sweet_alert.updated_successfully'));
+        $product->save();
+        $images1 = array();
+        if($files=$request->file('images')){
+            foreach($files as $file){
+                $picture_name = 'uploads/' . time() . str_shuffle('abcdef') . '.' . $file->getClientOriginalExtension();
+                Image::make($file)->save(public_path("$picture_name"));
+                $images1[]=$picture_name ;
+            }
         }
+        $images = ProductImage::where('product_id', $product->id)->get();
+        if(count($images1)) {
+            foreach ($images as $image) {
+                $image->delete();
+            }//end foreach
+            for ($x = 0; $x < count($request->images); $x++) {
+                $image = new ProductImage();
+                $image->product_id = $product->id;
+                $image->image = $images1[$x];
+                $image->save();
+            }
+        }
+        $product_categories = ProductCategory::where('product_id',$product->id)->get();
+        foreach ($product_categories as $category){
+            $category->delete();
+        }//end foreach
+        for ($x=0;$x<count($request->cat_ids);$x++){
+            $product_category = new ProductCategory();
+            $product_category->product_id = $product->id;
+            $product_category->category_id = $request->cat_ids[$x];
+            $product_category->save();
+        }
+        session()->flash('message', trans('sweet_alert.updated_successfully'));
+
         return redirect(route('products.index'));
     }
 

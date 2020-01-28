@@ -50,6 +50,9 @@ class ProductRequest extends FormRequest
                     'size_ar' => 'required',
                     'size_en' => 'required',
                     'brand_id' => 'required',
+                    'cat_ids' => 'required',
+                    'images' => 'required',
+                    'images.*' => 'image',
 
                 ];
 
@@ -76,6 +79,8 @@ class ProductRequest extends FormRequest
                     'size_ar' => 'required',
                     'size_en' => 'required',
                     'brand_id' => 'required',
+                    'cat_ids' => 'required',
+                    'images.*' => 'image',
                 ];
 
         }

@@ -74,7 +74,7 @@
                                         <label>{{trans('admin_content.main_category')}}</label>
                                         <select class="form-control" name ="parent_id" required>
                                             <option value="" selected disabled>{{trans('admin_content.choose_one')}}</option>
-                                            <option value="0">{{trans('admin_content.without_main_category')}}</option>
+                                            <option {{$category->parent_id == 0 ? 'selected' : ''}} value="0">{{trans('admin_content.without_main_category')}}</option>
                                             @foreach($categories as $cat)
                                                 <option {{$category->parent_id == $cat->id ? 'selected' : ''}} value="{{$cat->id}}">{{$cat->name}}</option>
                                             @endforeach

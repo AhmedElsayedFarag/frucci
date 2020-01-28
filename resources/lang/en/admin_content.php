@@ -152,6 +152,12 @@ return [
     'edit_settings' => 'Edit settings',
     'ferrucci_location_en' => 'P.O. Box 2341 Al Khobar Saudi Arabia 31952',
     'ferrucci_location_ar' => 'صندوق بريد 2341 الخبر المملكة العربية السعودية',
+    'please_choose_one_or_many_categories' => 'Please, choose one or many categories',
+    'please_upload_thumbnail' => 'Please, upload thumbnail',
+    'images' => 'Images',
+    'please_upload_one_or_many_images' => 'Please, upload one image or more',
+    'cities' => 'Cities',
+    'countries' => 'Countries',
 
 
 

@@ -243,12 +243,26 @@
                                     <div class="col-12">
                                         <div class="form-group row">
                                             <div class="col-md-2">
-                                                <span>{{trans('admin_content.image')}}</span>
+                                                <span>{{trans('admin_content.thumbnail')}}</span>
                                             </div>
                                             <div class="col-md-10">
                                                 <input type="file" class="form-control" name="thumbnail" accept=".gif, .jpg, .png, .webp" required>
                                                 <div class="invalid-feedback">
-                                                    {{trans('admin_content.please_upload_image')}}
+                                                    {{trans('admin_content.please_upload_thumbnail')}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-2">
+                                                <span>{{trans('admin_content.images')}}</span>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <input multiple type="file" class="form-control" name="images[]" accept=".gif, .jpg, .png, .webp" required>
+                                                <div class="invalid-feedback">
+                                                    {{trans('admin_content.please_upload_one_or_many_images')}}
                                                 </div>
                                             </div>
                                         </div>
@@ -264,6 +278,21 @@
                                         </select>
                                         <div class="invalid-feedback">
                                             {{trans('admin_content.please_enter_name')}}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group  col-md-6">
+                                            <label>{{trans('admin_content.categories')}}</label>
+                                            <select multiple class="form-control" name ="cat_ids[]" required>
+                                                <option value=""  disabled >{{trans('admin_content.choose_one_or_many')}}</option>
+                                                @foreach($categories as $category)
+                                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                {{trans('admin_content.please_choose_one_or_many_categories')}}
+                                            </div>
                                         </div>
                                     </div>
 

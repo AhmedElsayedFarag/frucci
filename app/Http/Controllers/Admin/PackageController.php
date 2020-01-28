@@ -62,7 +62,7 @@ class PackageController extends Controller
             $package_product->package_id = $package->id;
             $package_product->save();
         }
-
+        session()->flash('message', trans('sweet_alert.added_successfully'));
 //        $package->products()->sync($request->product_id);
         return redirect(route('packages.index'));
     }
@@ -125,6 +125,7 @@ class PackageController extends Controller
             $package_product->save();
         }
         //$package->products()->sync($request->product_id);
+        session()->flash('message', trans('sweet_alert.updated_successfully'));
         return redirect(route('packages.index'));
     }
 

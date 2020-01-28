@@ -49,7 +49,7 @@
                                     <tr align="center">
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$package->name}}</td>
-                                        <td>{{$package->price}}</td>
+                                        <td>{{$package->price . ' ' . trans('admin_content.currency')}}</td>
                                         <td><img src="{{asset($package->image)}}" alt="package" style="width:200px; height:100px"></td>
                                         <td>
                                             <a href="{{route('packages.edit', $package->id)}}"><i class="fa fa-edit"></i></a>

@@ -59,7 +59,7 @@
                                         <label>{{trans('admin_content.country')}}</label>
                                         <select class="form-control" name ="parent_id" >
                                             <option value="" selected disabled>{{trans('admin_content.choose_one')}}</option>
-                                            <option value="0">{{trans('admin_content.without_country')}}</option>
+                                            <option {{$countryCity->parent_id == 0 ? 'selected' : ''}} value="0">{{trans('admin_content.without_country')}}</option>
                                             @foreach($countries as $country)
                                                 <option {{$countryCity->parent_id == $country->id ? 'selected' : ''}} value="{{$country->id}}">{{$country->name}}</option>
                                             @endforeach

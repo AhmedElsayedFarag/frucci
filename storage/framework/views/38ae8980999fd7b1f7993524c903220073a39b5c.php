@@ -65,7 +65,7 @@
                                                     <span><?php echo e(trans('admin_content.image')); ?></span>
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <input type="file" class="form-control" name="image">
+                                                    <input type="file" class="form-control" name="image" accept=".gif, .jpg, .png, .webp">
                                                     <div class="invalid-feedback">
                                                         <?php echo e(trans('admin_content.please_upload_image')); ?>
 
@@ -78,13 +78,13 @@
                                         <label><?php echo e(trans('admin_content.main_category')); ?></label>
                                         <select class="form-control" name ="parent_id" required>
                                             <option value="" selected disabled><?php echo e(trans('admin_content.choose_one')); ?></option>
-                                            <option value="0"><?php echo e(trans('admin_content.without_main_category')); ?></option>
+                                            <option <?php echo e($category->parent_id == 0 ? 'selected' : ''); ?> value="0"><?php echo e(trans('admin_content.without_main_category')); ?></option>
                                             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option <?php echo e($category->parent_id == $cat->id ? 'selected' : ''); ?> value="<?php echo e($cat->id); ?>"><?php echo e($cat->name); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                         <div class="invalid-feedback">
-                                            <?php echo e(trans('admin_content.please_enter_name')); ?>
+                                            <?php echo e(trans('admin_content.please_choose_category')); ?>
 
                                         </div>
                                     </div>
