@@ -93,13 +93,12 @@ class CountryCityController extends Controller
         foreach ($available_locales as $locale => $value){
             $countryCity->translateOrNew($locale)->name = $request['name_'.$locale];
         }//end for each
-        if ($request->parent_id){
+        if ($request->parent_id||$request->parent_id=="0"){
             $countryCity->parent_id = $request->parent_id;
         }
-        //$countryCity->save();
-        if($countryCity->save()) {
-            session()->flash('message', trans('sweet_alert.updated_successfully'));
-        }
+        $countryCity->save();
+        session()->flash('message', trans('sweet_alert.updated_successfully'));
+
         return redirect(route('countries-cities.index'));
     }
 

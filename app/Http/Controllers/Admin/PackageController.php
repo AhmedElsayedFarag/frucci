@@ -114,6 +114,10 @@ class PackageController extends Controller
             $package->image = $picture_name;
         }//end if
         $package->save();
+        $package_products = PackageProduct::where('package_id',$package->id)->get();
+        foreach ($package_products as $product){
+            $product->delete();
+        }//end foreach
         for ($x=0;$x<count($request->product_ids);$x++){
             $package_product = new PackageProduct();
             $package_product->product_id = $request->product_ids[$x];

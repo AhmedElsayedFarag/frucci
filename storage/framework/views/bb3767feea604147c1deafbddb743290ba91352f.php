@@ -69,6 +69,8 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">الدول</h4>
+                                                <a href="<?php echo e(route('countries-cities.create')); ?>" class="btn btn-primary btn-block my-2 waves-effect waves-light"><?php echo e(trans('admin_content.add_country_city')); ?> </a>
+
                 </div>
                 <div class="card-content" >
                     <div class="card-body card-dashboard" >

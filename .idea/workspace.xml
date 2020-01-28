@@ -4,10 +4,13 @@
     <list default="true" id="244bb19f-d217-445a-a7ee-ce60ba0f6526" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;vendor/intervention/image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CountryCityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CountryCityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CountryCityRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CountryCityRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/countries-cities/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/countries-cities/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PackageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PackageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Package.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Package.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_08_134835_create_package_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_08_134835_create_package_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/countries-cities/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/countries-cities/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0d9ca56a2a830f2b4cb21f93532c9090dee04b5e.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0d9ca56a2a830f2b4cb21f93532c9090dee04b5e.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/bb3767feea604147c1deafbddb743290ba91352f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/bb3767feea604147c1deafbddb743290ba91352f.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
@@ -226,7 +229,8 @@
       <workItem from="1579967998193" duration="44000" />
       <workItem from="1579968238205" duration="20000" />
       <workItem from="1580030377906" duration="11466000" />
-      <workItem from="1580124004323" duration="1149000" />
+      <workItem from="1580124004323" duration="1544000" />
+      <workItem from="1580191727144" duration="2759000" />
     </task>
     <servers />
   </component>
@@ -254,10 +258,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579205404645" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1580124007813">
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1580192202956">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580124007813" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580192202956" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1578947332930">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

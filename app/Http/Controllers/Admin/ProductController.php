@@ -58,7 +58,7 @@ class ProductController extends Controller
         }
         $product->price_before = $request->price_before;
         $product->price_after = $request->price_after;
-        $product->colors = $request->colors;
+        $product->colors = serialize($request->colors);
         $product->status = $request->status;
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
