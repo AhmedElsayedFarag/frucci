@@ -13,7 +13,7 @@
     <!--start div-->
     <div class="row" style="display:block">
 
-
+        <a href="{{route('countries-cities.create')}}" class="btn btn-primary btn-block my-2 waves-effect waves-light">{{trans('admin_content.add_country_city')}} </a>
         <div class="row breadcrumbs-top">
             <div class="col-12">
                 <h2 class="content-header-title float-left mb-0">{{trans('admin_content.countries_cities')}}</h2>

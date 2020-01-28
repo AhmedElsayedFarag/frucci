@@ -141,6 +141,19 @@ return [
     'please_choose_one'   => 'من فضلك اختر واحدة',
     'option'   => 'الاختيار',
     'currency' => 'ر.س',
+    'facebook' => 'فيسبوك',
+    'twitter' => 'تويتر',
+    'youtube' => 'يوتيوب',
+    'linkedin' => 'لينكدان',
+    'logo_header' => 'شعار رأس الموقع',
+    'logo_footer' => 'شعار أسفل الموقع',
+    'fax' => 'الفاكس',
+    'location_ar' => 'الموقع بالعربية',
+    'location_en' => 'الموقع بالانجليزية',
+    'edit_settings' => 'تعديل الاعدادات',
+    'ferrucci_location_ar' => 'صندوق بريد 2341 الخبر المملكة العربية السعودية',
+    'ferrucci_location_en' => 'P.O. Box 2341 Al Khobar Saudi Arabia 31952',
+
 
 
 

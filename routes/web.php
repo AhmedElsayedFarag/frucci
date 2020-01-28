@@ -58,8 +58,14 @@ Route::middleware(['auth','checkAdmin'])->prefix('admin')->group(function () {
     //Contacts Dashboard
     Route::resource('contacts', 'Admin\ContactController');
 
-    //Coupons Dashboard
+    //Contacts Dashboard
     Route::resource('coupons', 'Admin\CouponController');
+
+    //Settings Dashboard
+    Route::get('settings', 'Admin\SettingController@index')->name('settings');
+    Route::put('update', 'Admin\SettingController@update')->name('update');
+
+
 
     Route::get('logout', function () {
         auth()->logout();
@@ -73,8 +79,17 @@ Route::get('change_locale/{locale}', 'IndexController@change_locale')->name('cha
 
 
 Route::get('/', function () {
-    $user=\Illuminate\Support\Facades\Auth::user();
+//    $user=\Illuminate\Support\Facades\Auth::user();
 
-    return view('welcome');
+//    return view('welcome');
+
+
+
+
+
+
+
+
+
 });
 

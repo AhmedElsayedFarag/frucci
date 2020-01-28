@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     Use Translatable;
-    public $translatedAttributes = ['value'];
+    public $translatedAttributes = ['name', 'value'];
+
 }

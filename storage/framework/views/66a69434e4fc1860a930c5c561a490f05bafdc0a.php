@@ -4,7 +4,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('pageSubTitle'); ?>
-    <?php echo e(trans('admin_content.countries_cities')); ?>
+    <?php echo e(trans('admin_content.add_country_city')); ?>
 
 <?php $__env->stopSection(); ?>
 

@@ -14,5 +14,6 @@ return [
     'subscribers' => 'Subscribers',
     'contacts' => 'Contacts',
     'coupons' => 'Coupons',
+    'settings' => 'Settings',
 
 ];
